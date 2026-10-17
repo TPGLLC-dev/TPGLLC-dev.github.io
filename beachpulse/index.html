@@ -5,7 +5,7 @@
      DisneyWait/fastlane-beachpulse/metadata/en-US/description.txt. Pro is a one-time
      purchase: $4.99 US, checked 2026-10-17 in ASC (manual price, base territory
      USA) and RevenueCat (default offering, $rc_lifetime package).
-  ⚠️ Screenshots are the App Store set (fastlane-beachpulse/screenshots, 01-06).
+  ⚠️ Screenshots are the raw captures behind the App Store set (fastlane raw/).
      Their beach photos are licensed (beach-pulse/app/src/data/heroes.ts), NEVER
      webcam frames: beach-pulse/POLICY.md forbids displaying webcam imagery.
      07 ("21 beaches") is left out because the listing text says 22.
@@ -43,7 +43,7 @@
         <span class="soonpill">Coming soon to iPhone</span>
         <span class="price">Free to download. BeachPulse Pro is a one-time $4.99 purchase. No account, no ads, no tracking.</span>
       </div>
-      <div class="herovid"><img class="heroshot" src="../assets/img/bp-01.jpg" alt="Which beach, and why" width="560" height="1217"></div>
+      <div class="herovid"><img class="heroshot" src="../assets/img/bp-results.jpg" alt="Results: the best beach for your window and why" width="560" height="1217"></div>
     </div>
   </header>
 
@@ -51,13 +51,14 @@
     <section class="light" id="features">
       <div class="wrap">
         <h2>What it does</h2>
-        <p class="sub">Public beaches across Tampa Bay, Sarasota, the Space Coast and South Florida. Swipe for more.</p>
-        <div class="gallery" tabindex="0" aria-label="BeachPulse screens, swipe for more">
-          <img src="../assets/img/bp-02.jpg" alt="Every reason, spelled out" width="560" height="1217" loading="lazy">
-          <img src="../assets/img/bp-03.jpg" alt="Your whole day, step by step" width="560" height="1217" loading="lazy">
-          <img src="../assets/img/bp-04.jpg" alt="Every beach, side by side" width="560" height="1217" loading="lazy">
-          <img src="../assets/img/bp-05.jpg" alt="Red tide and sargassum, told straight" width="560" height="1217" loading="lazy">
-          <img src="../assets/img/bp-06.jpg" alt="Every beach in reach, ranked" width="560" height="1217" loading="lazy">
+        <p class="sub">Public beaches across Tampa Bay, Sarasota, the Space Coast and South Florida.</p>
+        <div class="shots">
+          <figure><img src="../assets/img/bp-why.jpg" alt="Why we chose this beach, factor by factor" width="560" height="1217" loading="lazy">
+            <figcaption><b>Every reason, spelled out</b>Each factor gets a score and a label: measured, derived or estimated. You see exactly what decided it.</figcaption></figure>
+          <figure><img src="../assets/img/bp-day.jpg" alt="Your day: leave, arrive, time on the sand, home" width="560" height="1217" loading="lazy">
+            <figcaption><b>Your day, step by step</b>When to leave, when you reach the sand and when to head home, with real drive time and parking.</figcaption></figure>
+          <figure><img src="../assets/img/bp-water.jpg" alt="Conditions, including red tide and sargassum readings" width="560" height="1217" loading="lazy">
+            <figcaption><b>Red tide and sargassum, told straight</b>Official readings with their source and age, next to air and water temperature.</figcaption></figure>
         </div>
         <div class="feats">
           <div class="feat"><h3>Live conditions</h3><p>Air and feels-like temperature, cloud, rain, wind and UV, hour by hour across the exact window you are free.</p></div>
