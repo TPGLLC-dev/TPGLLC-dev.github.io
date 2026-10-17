@@ -109,6 +109,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02
 .shots img { border-radius: 16px; box-shadow: 0 10px 26px rgba(30,20,80,.18); }
 .shots figcaption { margin-top: 10px; font-size: .95rem; }
 .shots b { display: block; color: var(--ink); }
+.shots + .feats { margin-top: 32px; }
 
 /* features + free/pro */
 .feats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
