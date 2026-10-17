@@ -10,6 +10,9 @@
     - Waits refresh every 2 minutes (fetchRideData schedule).
     - Free: live waits, LL status/history, ONE alert. Pro ($4.99 / 2 weeks,
       $24.99 / year): unlimited alerts, smart itinerary, forecasts, etc.
+  BeachPulse and LinksPulse (added 2026-10-17) sit in their own "Beyond the parks"
+  group: the park band and Pro prices do not apply to them (their Pro is a
+  one-time purchase, price not stated).
   ⚠️ Privacy/terms links point at each app's EXISTING legal site on purpose.
      Shipped builds and App Store Connect use those addresses; they move here
      only with each app's next build (see the plan, stage 2).
@@ -19,12 +22,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>The Pulse Family of Apps</title>
-  <meta name="description" content="Live wait times, ride-reopening alerts and weather-aware day plans for Walt Disney World, Disneyland, Universal Orlando, SeaWorld and Busch Gardens.">
+  <meta name="description" content="Live help for your day out: wait times and alerts for Walt Disney World, Disneyland, Universal Orlando, SeaWorld and Busch Gardens, plus BeachPulse for Florida beaches and LinksPulse for Central Florida golf.">
   <link rel="icon" type="image/png" href="assets/img/icon-magipulse.png">
-  <link rel="stylesheet" href="assets/site.css?v=4">
+  <link rel="stylesheet" href="assets/site.css?v=5">
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Pulse Family of Apps">
-  <meta property="og:description" content="Live help for your park day: wait times, reopening alerts and day plans, one app per resort.">
+  <meta property="og:description" content="Live help for your day out: theme parks, Florida beaches and Central Florida golf, one app for each.">
   <meta property="og:image" content="https://tpgllc-dev.github.io/assets/img/share-family.jpg">
   <meta property="og:url" content="https://tpgllc-dev.github.io/">
   <meta name="twitter:card" content="summary_large_image">
@@ -34,18 +37,22 @@
     <div class="wrap">
       <nav class="nav">
         <a class="brand" href="./"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
-        <div class="links"><a href="#apps">Apps</a><a href="magipulse/#videos">Videos</a><a href="#help">Privacy &amp; support</a></div>
+        <div class="links"><a href="#apps">Theme parks</a><a href="#beyond">Beaches &amp; golf</a><a href="magipulse/#videos">Videos</a><a href="#help">Privacy &amp; support</a></div>
       </nav>
     </div>
     <div class="wrap hero-in">
-      <h1>Live help for your park day.</h1>
-      <p>Live wait times, an alert the moment a ride reopens, and a day planner that watches the weather. One app for each resort, each built for that resort.</p>
+      <h1>Live help for your day out.</h1>
+      <p>One app for each kind of day: theme parks, Florida beaches and Central Florida golf. Each one watches live conditions, tells you what to do next, and shows you why.</p>
       <svg class="pulse" viewBox="0 0 560 48" fill="none" aria-hidden="true"><path d="M0 28h130l14-19 18 35 16-27 10 11h96l12-15 14 29 12-21 8 7h220" stroke="#f2c14e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
   </header>
 
   <main>
     <section class="cards" id="apps" aria-label="The apps">
+      <div class="wrap">
+        <h2 class="group">Theme parks</h2>
+        <p class="group-sub">Live waits, reopening alerts and day plans. One app for each resort.</p>
+      </div>
       <div class="wrap grid4">
         <a class="card mp" href="magipulse/">
           <img src="assets/img/icon-magipulse.png" alt="" width="56" height="56">
@@ -68,7 +75,7 @@
           <span class="chip soon">Coming soon</span>
           <h2>StudiPulse</h2>
           <span class="where">Universal Orlando · 4 parks</span>
-          <p>Live standby and Express Pass waits, Epic Universe included.</p>
+          <p>Live waits at all four parks, Epic Universe included, with Express Pass rides marked.</p>
           <span class="go">See StudiPulse ›</span>
         </a>
         <a class="card mc" href="magicalpulse/">
@@ -87,6 +94,31 @@
         <div><h3>Updated every 2 minutes</h3><p>Waits and ride status come from each park's live feed, all day.</p></div>
         <div><h3>Tells you when things change</h3><p>Set a wait you're happy with, or ask to hear the moment a broken-down ride reopens.</p></div>
         <div><h3>Free to download</h3><p>Pro adds smart day plans, wait predictions and unlimited alerts.</p></div>
+      </div>
+    </section>
+
+    <section class="beyond" id="beyond" aria-label="Beaches and golf">
+      <div class="wrap">
+        <h2 class="group">Beyond the parks</h2>
+        <p class="group-sub">The same idea for other days out: rank the choices on live conditions and say why.</p>
+        <div class="grid2">
+          <a class="card bp" href="beachpulse/">
+            <img src="assets/img/icon-beachpulse.png" alt="" width="56" height="56">
+            <span class="chip soon">Coming soon</span>
+            <h2>BeachPulse</h2>
+            <span class="where">Florida beaches · Tampa Bay, Sarasota, Space Coast, South Florida</span>
+            <p>Which beach today, and why: weather, water, tide and real drive time.</p>
+            <span class="go">See BeachPulse ›</span>
+          </a>
+          <a class="card lp" href="linkspulse/">
+            <img src="assets/img/icon-linkspulse.png" alt="" width="56" height="56">
+            <span class="chip soon">Coming soon</span>
+            <h2>LinksPulse</h2>
+            <span class="where">Central Florida golf · Orlando, Kissimmee, Disney area</span>
+            <p>Where to play, and why: weather across the round, drive time and green fees.</p>
+            <span class="go">See LinksPulse ›</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -111,6 +143,14 @@
             <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/">Privacy Policy</a>
             <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/terms.html">Terms of Use</a>
             <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/support.html">Support</a></div>
+          <div><h3><img src="assets/img/icon-beachpulse.png" alt="">BeachPulse</h3>
+            <a href="https://tpgllc-dev.github.io/BeachPulse-legal/">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/BeachPulse-legal/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/BeachPulse-legal/support.html">Support</a></div>
+          <div><h3><img src="assets/img/icon-linkspulse.png" alt="">LinksPulse</h3>
+            <a href="https://tpgllc-dev.github.io/LinksPulse-legal/privacy.html">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/LinksPulse-legal/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/LinksPulse-legal/support.html">Support</a></div>
         </div>
       </div>
     </section>
@@ -119,7 +159,7 @@
   <footer>
     <div class="wrap">
       <p>© 2026 The Penelope Group LLC.</p>
-      <p>These are independent apps. They are not affiliated with, endorsed by or sponsored by The Walt Disney Company, Universal Destinations &amp; Experiences, or United Parks &amp; Resorts. Park and attraction names are used only to identify what each app covers.</p>
+      <p>These are independent apps. They are not affiliated with, endorsed by or sponsored by The Walt Disney Company, Universal Destinations &amp; Experiences, United Parks &amp; Resorts, or any beach operator, golf course, resort or booking service. Park, attraction, beach and course names are used only to identify what each app covers.</p>
       <p>This site uses no cookies and no analytics. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
     </div>
   </footer>
