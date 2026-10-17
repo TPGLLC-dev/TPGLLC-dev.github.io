@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  The Pulse Family of Apps: family page. Built 2026-10-17.
+
+  ⚠️ EVERY CLAIM DESCRIBES THE APPS AS THEY ARE (checked 2026-10-17 against
+  DisneyWait/src/config/flavors/*.js and src/services/remoteConfigService.js):
+    - MagiPulse is the only app on the App Store (lookup by bundle id:
+      com.thepenelopegroup.magipulse → App Store id 6781875368). The other
+      three show "Coming soon" until their listing is live.
+    - Waits refresh every 2 minutes (fetchRideData schedule).
+    - Free: live waits, LL status/history, ONE alert. Pro ($4.99 / 2 weeks,
+      $24.99 / year): unlimited alerts, smart itinerary, forecasts, etc.
+  ⚠️ Privacy/terms links point at each app's EXISTING legal site on purpose.
+     Shipped builds and App Store Connect use those addresses; they move here
+     only with each app's next build (see the plan, stage 2).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Pulse Family of Apps</title>
+  <meta name="description" content="Live wait times, ride-reopening alerts and weather-aware day plans for Walt Disney World, Disneyland, Universal Orlando, SeaWorld and Busch Gardens.">
+  <link rel="icon" type="image/png" href="assets/img/icon-magipulse.png">
+  <link rel="stylesheet" href="assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Pulse Family of Apps">
+  <meta property="og:description" content="Live help for your park day: wait times, reopening alerts and day plans, one app per resort.">
+  <meta property="og:image" content="https://tpgllc-dev.github.io/assets/img/share-family.jpg">
+  <meta property="og:url" content="https://tpgllc-dev.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="./"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
+        <div class="links"><a href="#apps">Apps</a><a href="magipulse/#videos">Videos</a><a href="#help">Privacy &amp; support</a></div>
+      </nav>
+    </div>
+    <div class="wrap hero-in">
+      <h1>Live help for your park day.</h1>
+      <p>Live wait times, an alert the moment a ride reopens, and a day planner that watches the weather. One app for each resort, each built for that resort.</p>
+      <svg class="pulse" viewBox="0 0 560 48" fill="none" aria-hidden="true"><path d="M0 28h130l14-19 18 35 16-27 10 11h96l12-15 14 29 12-21 8 7h220" stroke="#f2c14e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </header>
+
+  <main>
+    <section class="cards" id="apps" aria-label="The apps">
+      <div class="wrap grid4">
+        <a class="card mp" href="magipulse/">
+          <img src="assets/img/icon-magipulse.png" alt="" width="56" height="56">
+          <span class="chip live">On the App Store</span>
+          <h2>MagiPulse</h2>
+          <span class="where">Walt Disney World · 4 parks</span>
+          <p>Live waits, reopening alerts, Lightning Lane sell-out times and smart day plans.</p>
+          <span class="go">See MagiPulse ›</span>
+        </a>
+        <a class="card sp" href="seapulse/">
+          <img src="assets/img/icon-seapulse.png" alt="" width="56" height="56">
+          <span class="chip soon">Coming soon</span>
+          <h2>SeaPulse</h2>
+          <span class="where">SeaWorld Orlando · Busch Gardens Tampa · Aquatica</span>
+          <p>Live waits and ride alerts across Orlando and Tampa.</p>
+          <span class="go">See SeaPulse ›</span>
+        </a>
+        <a class="card su" href="studipulse/">
+          <img src="assets/img/icon-studipulse.png" alt="" width="56" height="56">
+          <span class="chip soon">Coming soon</span>
+          <h2>StudiPulse</h2>
+          <span class="where">Universal Orlando · 4 parks</span>
+          <p>Live standby and Express Pass waits, Epic Universe included.</p>
+          <span class="go">See StudiPulse ›</span>
+        </a>
+        <a class="card mc" href="magicalpulse/">
+          <img src="assets/img/icon-magicalpulse.png" alt="" width="56" height="56">
+          <span class="chip soon">Coming soon</span>
+          <h2>MagiCalPulse</h2>
+          <span class="where">Disneyland Resort · 2 parks</span>
+          <p>Live waits and Lightning Lane tracking for Anaheim.</p>
+          <span class="go">See MagiCalPulse ›</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="band" aria-label="What every app does">
+      <div class="wrap grid3">
+        <div><h3>Updated every 2 minutes</h3><p>Waits and ride status come from each park's live feed, all day.</p></div>
+        <div><h3>Tells you when things change</h3><p>Set a wait you're happy with, or ask to hear the moment a broken-down ride reopens.</p></div>
+        <div><h3>Free to download</h3><p>Pro adds smart day plans, wait predictions and unlimited alerts.</p></div>
+      </div>
+    </section>
+
+    <section class="light" id="help">
+      <div class="wrap">
+        <h2>Privacy, terms and support</h2>
+        <p class="sub">Each app has its own privacy policy, terms of use and support page.</p>
+        <div class="legal">
+          <div><h3><img src="assets/img/icon-magipulse.png" alt="">MagiPulse</h3>
+            <a href="https://tpgllc-dev.github.io/MagiPulse-legal/">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/MagiPulse-legal/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/MagiPulse-legal/support.html">Support</a></div>
+          <div><h3><img src="assets/img/icon-seapulse.png" alt="">SeaPulse</h3>
+            <a href="https://tpgllc-dev.github.io/SeaPulse/">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/SeaPulse/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/SeaPulse/support.html">Support</a></div>
+          <div><h3><img src="assets/img/icon-studipulse.png" alt="">StudiPulse</h3>
+            <a href="https://tpgllc-dev.github.io/StudiPulse-legal/">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/StudiPulse-legal/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/StudiPulse-legal/support.html">Support</a></div>
+          <div><h3><img src="assets/img/icon-magicalpulse.png" alt="">MagiCalPulse</h3>
+            <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/">Privacy Policy</a>
+            <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/terms.html">Terms of Use</a>
+            <a href="https://tpgllc-dev.github.io/MagiCalPulse-legal/support.html">Support</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 The Penelope Group LLC.</p>
+      <p>These are independent apps. They are not affiliated with, endorsed by or sponsored by The Walt Disney Company, Universal Destinations &amp; Experiences, or United Parks &amp; Resorts. Park and attraction names are used only to identify what each app covers.</p>
+      <p>This site uses no cookies and no analytics. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+</body>
+</html>

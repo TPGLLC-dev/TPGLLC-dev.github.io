@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+  MagiPulse page. Built 2026-10-17.
+
+  ⚠️ EVERY CLAIM DESCRIBES THE APP AS IT IS (checked 2026-10-17):
+    - App Store id 6781875368 (NOT 6742397082, the stale ascAppId in
+      src/config/flavors/magicpulse.js, which 404s).
+    - Free vs Pro from remoteConfigService.premiumFeatures: 'alerts' (free
+      users get ONE alert, AppContext.canAddAlert), 'smart_itinerary',
+      'forecasts', 'multi_day', 'priceSurge', 'travel_party' (hosting only),
+      'mini_plan', 'geofencing'. LL status + LL History cards are NOT gated.
+      Early access ended 2026-08-15 (RTDB config/earlyAccess).
+    - Prices: $4.99 for two weeks, $24.99 a year.
+    - Videos are web copies of docs/video/*.mp4 and carry their own footnotes.
+  ⚠️ Privacy/terms/support links stay on MagiPulse-legal until the next build
+     points legalUrls here (plan stage 2). Do not copy the policy text here yet.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MagiPulse · Walt Disney World wait times and alerts</title>
+  <meta name="description" content="MagiPulse shows live wait times for all four Walt Disney World parks, alerts you when a broken-down ride reopens, tracks Lightning Lane sell-outs and plans your day around the weather.">
+  <meta name="apple-itunes-app" content="app-id=6781875368">
+  <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
+  <link rel="apple-touch-icon" href="../assets/img/icon-magipulse.png">
+  <link rel="stylesheet" href="../assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MagiPulse: Walt Disney World wait times and alerts">
+  <meta property="og:description" content="Live waits, an alert the moment a ride reopens, Lightning Lane sell-out times and a day plan that works around the weather.">
+  <meta property="og:image" content="https://tpgllc-dev.github.io/assets/img/share-magipulse.jpg">
+  <meta property="og:url" content="https://tpgllc-dev.github.io/magipulse/">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="mp">
+  <header class="apphero">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
+        <div class="links"><a href="#features">Features</a><a href="#videos">Videos</a><a href="#pro">Free &amp; Pro</a><a href="#help">Support</a></div>
+      </nav>
+    </div>
+    <div class="wrap apphero-in">
+      <div>
+        <div class="appname"><img src="../assets/img/icon-magipulse.png" alt="" width="60" height="60"><span>MagiPulse</span></div>
+        <h1>Spend less time checking. More time enjoying.</h1>
+        <p>Live wait times for all four Walt Disney World parks, an alert the moment a broken-down ride reopens, Lightning Lane sell-out times, and a day plan that works around the weather.</p>
+        <a class="badge" href="https://apps.apple.com/app/id6781875368"><img src="../assets/img/app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
+        <span class="price">Free to download. MagiPulse Pro is $4.99 for two weeks or $24.99 a year.</span>
+      </div>
+      <div class="herovid">
+        <div class="vid" data-src="videos/lightning-lane.mp4">
+          <img src="videos/lightning-lane.jpg" alt="When does Lightning Lane sell out? A 24-second demo" width="540" height="960">
+          <button type="button" aria-label="Play the Lightning Lane demo video"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="light" id="features">
+      <div class="wrap">
+        <h2>What it does</h2>
+        <p class="sub">Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom, refreshed every 2 minutes.</p>
+        <div class="shots">
+          <figure><img src="../assets/img/mp-alerts.jpg" alt="A ride page with the live wait, predicted wait and a wait alert" width="560" height="1217" loading="lazy">
+            <figcaption><b>Ride when waits are lower</b>Set the wait you're happy with. MagiPulse tells you when the ride gets there.</figcaption></figure>
+          <figure><img src="../assets/img/mp-reopen.jpg" alt="The alerts list, including reopening alerts for rides that are down" width="560" height="1217" loading="lazy">
+            <figcaption><b>Know the minute a ride reopens</b>Tap "Notify Me When Open" on a ride that's down and go do something else.</figcaption></figure>
+          <figure><img src="../assets/img/mp-planner.jpg" alt="The day planner with park arrival, must-dos and pace" width="560" height="1217" loading="lazy">
+            <figcaption><b>A day plan built for you</b>Pick your must-dos and your pace. The plan moves outdoor rides away from heat and storms.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="wrap">
+        <div class="feats">
+          <div class="feat"><h3>Lightning Lane, live</h3><p>Every ride shows whether its Lightning Lane is sold out or the next return time, plus when it usually sells out.</p></div>
+          <div class="feat"><h3>Downtime history</h3><p>When a ride goes down, see how long its outages usually last before you decide to wait.</p></div>
+          <div class="feat"><h3>Best deals right now</h3><p>The rides running shortest against their usual wait, so you know where to head next.</p></div>
+          <div class="feat"><h3>Party nights and park maps</h3><p>Plan around Halloween and Christmas party tickets, and see which land is busiest on the park map.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="videos">
+      <div class="wrap">
+        <h2>See it in action</h2>
+        <p class="sub">Short demos recorded in the app.</p>
+        <div class="vids">
+          <figure><div class="vid" data-src="videos/lightning-lane.mp4"><img src="videos/lightning-lane.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: When does Lightning Lane sell out?"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>When does Lightning Lane sell out?</figcaption></figure>
+          <figure><div class="vid" data-src="videos/ride-reopens.mp4"><img src="videos/ride-reopens.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Get told when a ride reopens"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>Get told when a ride reopens</figcaption></figure>
+          <figure><div class="vid" data-src="videos/party-night.mp4"><img src="videos/party-night.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Plan a party-night day"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>Plan a party-night day</figcaption></figure>
+          <figure><div class="vid" data-src="videos/busiest-land.mp4"><img src="videos/busiest-land.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: See which land is busiest"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>See which land is busiest</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="white" id="pro">
+      <div class="wrap">
+        <h2>Free and Pro</h2>
+        <p class="sub">Everything you need to check waits is free. Pro does the planning and watching for you.</p>
+        <div class="tiers">
+          <div class="tier"><h3>Free</h3><p class="cost">No account needed to look around</p>
+            <ul><li>Live waits and ride status, all four parks</li><li>Lightning Lane status and sell-out history</li><li>Downtime history for each ride</li><li>Park map with the busiest lands</li><li>One ride alert at a time (sign in to set it)</li></ul></div>
+          <div class="tier pro"><h3>Pro</h3><p class="cost">$4.99 for two weeks or $24.99 a year</p>
+            <ul><li>Unlimited alerts</li><li>Smart day planner, including weather and party nights</li><li>Wait predictions and the best time to ride</li><li>Multi-day trips and travel parties</li><li>Lightning Lane price-rise warnings</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="help">
+      <div class="wrap">
+        <h2>Support and privacy</h2>
+        <p class="sub">Questions, problems or ideas: the support page has the answers and how to reach us.</p>
+        <div class="docs">
+          <a href="https://tpgllc-dev.github.io/MagiPulse-legal/support.html">Support</a>
+          <a href="https://tpgllc-dev.github.io/MagiPulse-legal/">Privacy Policy</a>
+          <a href="https://tpgllc-dev.github.io/MagiPulse-legal/terms.html">Terms of Use</a>
+          <a href="../">Other Pulse apps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 The Penelope Group LLC.</p>
+      <p>MagiPulse is an independent app and is not affiliated with, endorsed by or sponsored by The Walt Disney Company. Park and attraction names are used only to identify what the app covers.</p>
+      <p>This site uses no cookies and no analytics. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
