@@ -157,6 +157,21 @@ footer p { margin: 6px 0; max-width: 60em; }
 footer a { color: var(--on-dark-2); }
 .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 10px; }
 
+/* Download row: the badge for phones, plus a QR code for visitors on a computer
+   (who can't install an iPhone app from the badge). The QR is hidden on touch and
+   narrow screens, where it can't be scanned by the device showing it. */
+.get { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.qr { display: flex; align-items: center; gap: 12px; max-width: 15em; }
+.qr img { width: 84px; height: 84px; padding: 6px; background: #fff; border-radius: 10px; flex: none; }
+.qr span { font-size: .84rem; line-height: 1.35; color: var(--on-dark-2); }
+.getband { color: var(--on-dark); background: radial-gradient(90% 140% at 0% 0%, var(--a2) 0%, var(--a1) 60%, var(--deep) 100%); padding-block: 40px; }
+.getband-in { display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center; }
+.getband-icon { border-radius: 16px; }
+.getband h2 { color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+.getband p { margin: 4px 0 0; color: var(--on-dark-2); }
+@media (max-width: 900px), (hover: none) { .qr { display: none; } }
+@media (max-width: 760px) { .getband-in { grid-template-columns: auto 1fr; } .getband .get { grid-column: 1 / -1; } }
+
 @media (max-width: 900px) {
   .grid4, .legal, .vids { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .apphero-in { grid-template-columns: 1fr; }
