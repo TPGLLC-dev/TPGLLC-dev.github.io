@@ -170,6 +170,11 @@ footer a { color: var(--on-dark-2); }
 .getband h2 { color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
 .getband p { margin: 4px 0 0; color: var(--on-dark-2); }
 @media (max-width: 900px), (hover: none) { .qr { display: none; } }
+/* Hero: badge + QR and the price line centered under the intro paragraph (same max width as .apphero p). */
+@media (min-width: 901px) {
+  .apphero .get { max-width: calc(34 * 1.08rem); justify-content: center; gap: 36px; }
+  .apphero .price { max-width: calc(34 * 1.08rem); text-align: center; }
+}
 @media (max-width: 760px) { .getband-in { grid-template-columns: auto 1fr; } .getband .get { grid-column: 1 / -1; } }
 
 @media (max-width: 900px) {
