@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+  Travel advisor resources for MagiPulse. Built 2026-10-19.
+
+  ⚠️ NOT FOR SEARCH. noindex here; robots.txt keeps crawlers off the PDFs
+     (a PDF cannot carry a meta tag). Linked only from the MagiPulse footer.
+  ⚠️ NOTHING SENSITIVE ON THIS PAGE. No commission rates, no codes, no payout
+     terms: GitHub Pages cannot password-protect a page. Those go in each
+     advisor's private referral guide (DisneyWait docs/marketing/travel_advisors/).
+  ⚠️ IN-APP WORDING. The App Store build still says "Have an affiliate code?";
+     builds after 2026-10-18 (efe8774) say "Have an advisor code?". The email and
+     FAQ name both until that build is out — then drop "(older versions…)".
+  ⚠️ COMMISSION FACTS match functions/subscriptionFunctions.js: one payment per
+     client, on the first Pro purchase (two-week pass OR annual) within 60 days
+     of the code being applied. Renewals and repeat passes do not pay.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MagiPulse for Travel Advisors</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
+  <link rel="stylesheet" href="../assets/site.css?v=8">
+  <style>
+    .ta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: 12px; font: 700 .95rem/1.2 var(--text); text-decoration: none; border: 0; cursor: pointer; }
+    .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .btn.gold { background: var(--gold); color: #2a1a00; }
+    .btn.ghost { background: rgba(255,255,255,.14); color: #fff; }
+    .btn.ink { background: #3b1d9c; color: #fff; }
+    .btn.line { background: #fff; color: #3b1d9c; border: 1.5px solid #cdbcff; }
+    .cardthumb { width: min(290px, 100%); justify-self: center; border-radius: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.4); transform: rotate(2deg); }
+    .steps3 > div { position: relative; padding-left: 46px; }
+    .steps3 b.n { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: #2a1a00; font: 800 1rem/32px var(--display); text-align: center; }
+    .share { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 32px; align-items: start; }
+    .share figure { margin: 0; }
+    .share figure img { border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(30,20,80,.14); }
+    .share figcaption { margin-top: 14px; display: grid; gap: 10px; }
+    .share figcaption small { color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .email { background: var(--soft); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-width: 0; }
+    .email header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: #fff; }
+    .email header b { color: var(--ink); font-size: .95rem; }
+    .email header span { color: var(--muted); font-size: .86rem; }
+    .email pre { margin: 0; padding: 18px 20px; white-space: pre-wrap; overflow-wrap: anywhere; font: .95rem/1.55 var(--text); color: var(--body); }
+    .email mark { background: #fff1c2; color: #6b4a00; padding: 0 3px; border-radius: 4px; }
+    .email .opt { display: block; border-left: 3px solid #cdbcff; padding-left: 12px; color: #4b3f7a; }
+    .email footer.note { all: unset; display: block; padding: 0 20px 16px; font-size: .86rem; color: var(--muted); }
+    .faq { display: grid; gap: 10px; max-width: 820px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+    .faq summary { cursor: pointer; color: var(--ink); font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; color: #7c3aed; font-weight: 800; }
+    .faq details[open] summary::after { content: '\2013'; }
+    .faq p { margin: 8px 0 0; font-size: .96rem; }
+    .ref { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .callout { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; justify-content: space-between; background: var(--night2); color: var(--on-dark-2); border-radius: 16px; padding: 20px 24px; }
+    .callout b { color: #fff; font: 800 1.15rem/1.2 var(--display); display: block; margin-bottom: 2px; }
+    .mail { font-weight: 700; color: var(--ink); user-select: all; }
+    @media (max-width: 900px) { .share { grid-template-columns: 1fr; } .share figure { max-width: 290px; } .ref { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="mp">
+  <header class="apphero">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
+        <div class="links"><a href="#share">Share</a><a href="#faq">FAQ</a><a href="#videos">Videos</a><a href="#referrals">Referrals</a><a href="#contact">Contact</a></div>
+      </nav>
+    </div>
+    <div class="wrap apphero-in">
+      <div>
+        <div class="appname"><img src="../assets/img/icon-magipulse.png" alt="" width="60" height="60"><span>MagiPulse</span></div>
+        <h1>You plan the trip. We help with the park day.</h1>
+        <p>Everything you need to recommend MagiPulse to your Walt Disney World clients and hand it off in about five minutes. No sign-up, no training.</p>
+        <div class="ta-btns">
+          <a class="btn gold" href="magipulse-client-card.pdf">Get the client card (PDF)</a>
+          <a class="btn ghost" href="#share">Copy the client email</a>
+        </div>
+      </div>
+      <img class="cardthumb" src="client-card.jpg" alt="The MagiPulse client card" width="612" height="792">
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="wrap grid3 steps3">
+        <div><b class="n">1</b><h3>Send the email</h3><p>Paste our ready-made note into your trip documents email and add your client's name.</p></div>
+        <div><b class="n">2</b><h3>Attach the client card</h3><p>A one-page PDF with the App Store link and QR code. Or send the MagiPulse page link instead.</p></div>
+        <div><b class="n">3</b><h3>Add your advisor code</h3><p>In the referral program? Put your code in the email, so a Pro purchase is credited to you.</p></div>
+      </div>
+    </section>
+
+    <section class="white" id="share">
+      <div class="wrap">
+        <h2>Share with your clients</h2>
+        <p class="sub">Everything in this section is written for clients, so it's safe to forward, print or put in a trip folder.</p>
+        <div class="share">
+          <figure>
+            <img src="client-card.jpg" alt="Client card preview" width="612" height="792" loading="lazy">
+            <figcaption>
+              <a class="btn ink" href="magipulse-client-card.pdf">Download the client card (PDF)</a>
+              <small>Letter size, prints in color or black and white. Or send the web page instead: <b>tpgllc-dev.github.io/magipulse</b></small>
+            </figcaption>
+          </figure>
+          <div class="email">
+            <header><div><b>Subject: One more tool for your park days</b><br><span>Copy it, then fill in the highlighted parts</span></div><button class="btn line" type="button" id="copy-email">Copy email</button></header>
+<pre id="email-text">Hi <mark>[Client name]</mark>,
+
+As you get ready for your Walt Disney World trip, here's one more tool I recommend for your park days: MagiPulse. It shows live wait times for all four parks, alerts you the moment a ride that's down reopens, and shows when Lightning Lane usually sells out, so you know how early to book.
+
+Get it here: https://apps.apple.com/app/id6781875368
+
+Install it a few days before you go so you have time to explore. There are short how-to videos at https://tpgllc-dev.github.io/magipulse/
+
+It works alongside the My Disney Experience app, which you'll still use for tickets, park reservations and Lightning Lane bookings.
+
+<span class="opt">If you decide to upgrade to MagiPulse Pro, enter my advisor code <mark>[YOUR CODE]</mark> before you subscribe: in the app, go to Profile, then Upgrade to Pro, and tap "Have an advisor code?" (older versions of the app say "affiliate code"). MagiPulse pays me a small referral fee if you do.</span>
+Have a wonderful trip!
+<mark>[Your name]</mark></pre>
+            <footer class="note">Not in the referral program? Delete the indented paragraph.</footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="know">
+      <div class="wrap">
+        <h2>What to tell clients</h2>
+        <p class="sub">The short version. The one-sheet below has the longer one, for you.</p>
+        <div class="tiers">
+          <div class="tier"><h3>Free</h3><p class="cost">Download and look around, no account needed</p>
+            <ul><li>Live waits and ride status, all four parks</li><li>Lightning Lane status and sell-out history</li><li>Park map with the busiest lands</li><li>One ride alert at a time (sign in to set it)</li></ul></div>
+          <div class="tier pro"><h3>Pro</h3><p class="cost">$4.99 for two weeks (one-time, doesn't renew) or $24.99 a year</p>
+            <ul><li>Unlimited alerts</li><li>Smart day planner, including weather and party nights</li><li>Wait predictions and the best time to ride</li><li>Multi-day trips and travel parties</li></ul></div>
+        </div>
+        <div class="callout"><div><b>The advisor one-sheet</b>How MagiPulse fits around the trip you plan. 11 × 8.5 in, print-ready.</div><a class="btn gold" href="magipulse-advisor-one-sheet.pdf">Download the one-sheet (PDF)</a></div>
+      </div>
+    </section>
+
+    <section class="white" id="faq">
+      <div class="wrap">
+        <h2>Quick answers</h2>
+        <p class="sub">The questions clients ask most, in a sentence or two each.</p>
+        <div class="faq">
+          <details open><summary>Does MagiPulse replace the My Disney Experience app?</summary><p>No. Clients still use Disney's app for tickets, park reservations, dining and Lightning Lane bookings. MagiPulse helps them decide what to do next and when.</p></details>
+          <details><summary>Does it book Lightning Lane?</summary><p>No. It shows each ride's Lightning Lane status and when it usually sells out, so clients know how early to book in Disney's app.</p></details>
+          <details><summary>Are the wait predictions guaranteed?</summary><p>No. Live waits update from the parks every two minutes. Predictions are estimates from past waits and today's conditions.</p></details>
+          <details><summary>Which Pro option fits a vacation?</summary><p>The two-week pass ($4.99) covers a typical trip and doesn't renew. The annual plan ($24.99) suits annual passholders and repeat visitors.</p></details>
+          <details><summary>When should clients install it?</summary><p>A few days before the trip, so they can sign in, set up a day plan and watch a video or two.</p></details>
+          <details><summary>What happens when a ride breaks down or a storm rolls in?</summary><p>Clients can get an alert the moment a ride reopens. The day planner keeps outdoor rides out of the hottest and stormiest hours, and official National Weather Service warnings appear in the app.</p></details>
+          <details><summary>Does it work on Apple Watch? On Android?</summary><p>Yes to Apple Watch: a watch app plus watch-face shortcuts showing the shortest waits. It's iPhone-only for now.</p></details>
+          <details><summary>Which parks does it cover?</summary><p>All four Walt Disney World parks: Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom.</p></details>
+          <details><summary>Where does a client enter my advisor code?</summary><p>Signed in, on Profile, then Upgrade to Pro, under "Have an advisor code?" (older versions of the app say "affiliate code"). It has to be entered before they buy Pro.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="videos">
+      <div class="wrap">
+        <h2>Show, don't explain</h2>
+        <p class="sub">Short demos you can send a client instead of walking them through a feature. Each one is also on the <a href="../magipulse/#videos">MagiPulse page</a>.</p>
+        <div class="vids">
+          <figure><div class="vid" data-src="../magipulse/videos/overview.mp4"><img src="../magipulse/videos/overview.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: MagiPulse in 45 seconds"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>MagiPulse in 45 seconds</figcaption></figure>
+          <figure><div class="vid" data-src="../magipulse/videos/ride-reopens.mp4"><img src="../magipulse/videos/ride-reopens.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Get told when a ride reopens"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>When a ride reopens</figcaption></figure>
+          <figure><div class="vid" data-src="../magipulse/videos/lightning-lane.mp4"><img src="../magipulse/videos/lightning-lane.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: When does Lightning Lane sell out?"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>When Lightning Lane sells out</figcaption></figure>
+          <figure><div class="vid" data-src="../magipulse/videos/party-night.mp4"><img src="../magipulse/videos/party-night.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Plan a party-night day"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>Planning a party night</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="white" id="referrals">
+      <div class="wrap">
+        <h2>The advisor referral program</h2>
+        <p class="sub">By invitation while we pilot it. Your code, rate and the full terms come by email when you join.</p>
+        <div class="ref">
+          <div class="feat"><h3>You get a code</h3><p>A personal advisor code, set up for you by MagiPulse.</p></div>
+          <div class="feat"><h3>Your client enters it</h3><p>Signed in, on the upgrade screen, before buying Pro. The email template above already includes the steps.</p></div>
+          <div class="feat"><h3>You're paid once per client</h3><p>On their first Pro purchase, the two-week pass or the annual plan, within 60 days of entering your code.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="contact">
+      <div class="wrap">
+        <h2>Questions, or want to join?</h2>
+        <p class="sub">Write to <span class="mail">tpgllc.advisors@gmail.com</span>. Tell us what your clients ask that this page doesn't answer, too.</p>
+        <div class="docs"><a href="mailto:tpgllc.advisors@gmail.com?subject=MagiPulse%20advisor%20program">Email the advisor team</a><a href="../magipulse/">MagiPulse page</a><a href="https://tpgllc-dev.github.io/MagiPulse-legal/">Privacy Policy</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 The Penelope Group LLC.</p>
+      <p>MagiPulse is an independent app and is not affiliated with, endorsed by or sponsored by The Walt Disney Company. Park and attraction names are used only to identify what the app covers.</p>
+      <p>This site uses no cookies and no analytics. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script>
+    // Copy the email as plain text; fall back to selecting it if the clipboard is refused.
+    (function () {
+      var btn = document.getElementById('copy-email'), pre = document.getElementById('email-text');
+      if (!btn || !pre) return;
+      btn.addEventListener('click', function () {
+        var text = pre.innerText;
+        var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 2000); };
+        var select = function () { var r = document.createRange(); r.selectNodeContents(pre); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected: press Copy'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select); else select();
+      });
+    })();
+  </script>
+</body>
+</html>

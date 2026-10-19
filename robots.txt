@@ -1,0 +1,5 @@
+# Keep crawlers off the travel-advisor PDFs (a PDF cannot carry a noindex tag;
+# the page itself has one). The page and its files are public but not for search.
+User-agent: *
+Disallow: /travel-advisors/*.pdf
+Disallow: /travel-advisors/client-card.jpg
