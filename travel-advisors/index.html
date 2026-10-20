@@ -58,6 +58,25 @@
     .callout b { color: #fff; font: 800 1.15rem/1.2 var(--display); display: block; margin-bottom: 2px; }
     .mail { font-weight: 700; color: var(--ink); user-select: all; }
     @media (max-width: 900px) { .share { grid-template-columns: 1fr; } .share figure { max-width: 290px; } .ref { grid-template-columns: 1fr; } }
+    .refsteps { margin-bottom: 28px; }
+    .refterms { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+    .glance { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+    .glance h3, .agency h3 { margin: 0; color: var(--ink); font: 800 1.1rem/1.2 var(--display); }
+    .glance h3 { padding: 14px 20px; background: var(--soft); border-bottom: 1px solid var(--line); }
+    .glance dl { display: grid; grid-template-columns: 11em minmax(0, 1fr); margin: 0; }
+    .glance dt, .glance dd { margin: 0; padding: 11px 20px; border-bottom: 1px solid var(--line); font-size: .95rem; line-height: 1.45; }
+    .glance dt { color: var(--ink); font-weight: 700; }
+    .glance dl > :nth-last-child(-n+2) { border-bottom: 0; }
+    .agency { background: var(--night2); color: var(--on-dark-2); border-radius: 14px; padding: 20px 22px; display: grid; gap: 12px; }
+    .agency h3 { color: #fff; }
+    .agency ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: .95rem; line-height: 1.45; }
+    .agency b { color: #fff; }
+    .agency .btn { justify-self: start; }
+    .agency .join { margin: 0; font-size: .95rem; line-height: 1.45; }
+    .agency .join a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .agency .join a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 3px; }
+    .ph { background: #fff1c2; color: #6b4a00; padding: 0 3px; border-radius: 4px; font-weight: 600; }
+    @media (max-width: 900px) { .refterms { grid-template-columns: 1fr; } .glance dl { grid-template-columns: 1fr; } .glance dt { border-bottom: 0; padding-bottom: 0; } }
   </style>
 </head>
 <body class="mp">
@@ -152,6 +171,8 @@ Have a wonderful trip!
           <details><summary>Does it work on Apple Watch? On Android?</summary><p>Yes to Apple Watch: a watch app plus watch-face shortcuts showing the shortest waits. It's iPhone-only for now.</p></details>
           <details><summary>Which parks does it cover?</summary><p>All four Walt Disney World parks: Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom.</p></details>
           <details><summary>Where does a client enter my advisor code?</summary><p>Signed in, on Profile, then Upgrade to Pro, under "Have an advisor code?" (older versions of the app say "affiliate code"). It has to be entered before they buy Pro.</p></details>
+          <details><summary>My client already bought Pro once. Do I earn a fee if they enter my code now?</summary><p>No. The fee is for a client's first Pro purchase ever. If they bought a pass last year without a code, then enter yours and buy again, that purchase doesn't qualify. Codes are best shared before a client's first trip with MagiPulse.</p></details>
+          <details><summary>My client bought the two-week pass, then upgraded to the annual plan. Do I earn twice?</summary><p>No. You earn once, for the first purchase: $0.50 for the pass. Had they bought the annual plan first, you'd earn $3.00. Recommend the plan that fits the trip. If a client will want a year anyway, suggest they start with the annual plan.</p></details>
         </div>
       </div>
     </section>
@@ -174,13 +195,43 @@ Have a wonderful trip!
     </section>
 
     <section class="white" id="referrals">
+      <!-- Fees and payment terms here must match magipulse-advisor-program-terms.pdf
+           (source: DisneyWait docs/marketing/travel_advisors/terms_source.html). -->
       <div class="wrap">
         <h2>The advisor referral program</h2>
-        <p class="sub">By invitation while we pilot it. Your code, rate and the full terms come by email when you join.</p>
-        <div class="ref">
-          <div class="feat"><h3>You get a code</h3><p>A personal advisor code, set up for you by MagiPulse.</p></div>
-          <div class="feat"><h3>Your client enters it</h3><p>Signed in, on the upgrade screen, before buying Pro. The email template above already includes the steps.</p></div>
-          <div class="feat"><h3>You're paid once per client</h3><p>On their first Pro purchase, the two-week pass or the annual plan, within 60 days of entering your code.</p></div>
+        <p class="sub">By invitation while we pilot it. Each advisor earns a referral fee when a client's first Pro purchase uses their code.</p>
+
+        <div class="grid4 steps3 refsteps">
+          <div><b class="n">1</b><h3>Your agency joins</h3><p>Email us. We send the program terms and a one-page form listing your advisors.</p></div>
+          <div><b class="n">2</b><h3>Each advisor gets a code</h3><p>We set up a personal code for every advisor, plus a client card with that code printed on it.</p></div>
+          <div><b class="n">3</b><h3>The client enters it</h3><p>Signed in, on the Upgrade to Pro screen, before their first purchase.</p></div>
+          <div><b class="n">4</b><h3>We pay monthly</h3><p>With a statement of qualifying purchases for each code.</p></div>
+        </div>
+
+        <div class="refterms">
+          <div class="glance">
+            <h3>The terms at a glance</h3>
+            <dl>
+              <dt>What earns a fee</dt><dd>A client's <b>first</b> Pro purchase, the two-week pass or the annual plan, with your code entered first and within 60 days of entering it. One fee per client, ever; renewals don't count.</dd>
+              <dt>How much</dt><dd>$3.00 per annual plan, $0.50 per two-week pass.</dd>
+              <dt>When you're paid</dt><dd>Monthly, by the 15th, once a purchase is 30 days old, so refunds come out first.</dd>
+              <dt>Minimum payment</dt><dd>$25. Smaller balances roll over to the next month.</dd>
+              <dt>Who's paid</dt><dd>The agency, for all of its advisors. Independent advisors are paid directly.</dd>
+              <dt>How you're paid</dt><dd>PayPal, Venmo or check, once we have a W-9.</dd>
+              <dt>Your clients' privacy</dt><dd>Statements show counts and plans by code, never client names or contact details.</dd>
+              <dt>Telling clients</dt><dd>Let clients know you may earn a referral fee when you recommend MagiPulse.</dd>
+            </dl>
+          </div>
+          <aside class="agency">
+            <h3>For agencies</h3>
+            <ul>
+              <li><b>A code for every advisor,</b> so whoever recommends MagiPulse sees their own results.</li>
+              <li><b>One payment to the agency</b> covering all of its advisors, with one W-9. Prefer your advisors paid directly? Just ask.</li>
+              <li><b>One statement</b> for the agency, broken down by advisor, so you can share it out.</li>
+            </ul>
+            <p class="join">To sign up your agency, email <a href="mailto:tpgllc.advisor@gmail.com?subject=MagiPulse%20advisor%20program%3A%20agency%20sign-up">tpgllc.advisor@gmail.com</a> with your agency name and the advisors who'd like a code.</p>
+            <a class="btn ink" href="magipulse-advisor-program-terms.pdf" download>Program terms (PDF)</a>
+          </aside>
         </div>
       </div>
     </section>
