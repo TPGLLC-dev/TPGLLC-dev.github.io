@@ -11,8 +11,9 @@
      builds after 2026-10-18 (efe8774) say "Have an advisor code?". The email and
      FAQ name both until that build is out — then drop "(older versions…)".
   ⚠️ COMMISSION FACTS match functions/subscriptionFunctions.js: one payment per
-     client, on the first Pro purchase (two-week pass OR annual) within 60 days
-     of the code being applied. Renewals and repeat passes do not pay.
+     client, on the first PAID Pro purchase (two-week pass OR annual) within 60
+     days of the code being applied. Renewals, repeat passes and $0 offer-code
+     redemptions (recorded in free_passes/) do not pay.
 -->
 <html lang="en">
 <head>
@@ -171,8 +172,9 @@ Have a wonderful trip!
           <details><summary>Does it work on Apple Watch? On Android?</summary><p>Yes to Apple Watch: a watch app plus watch-face shortcuts showing the shortest waits. It's iPhone-only for now.</p></details>
           <details><summary>Which parks does it cover?</summary><p>All four Walt Disney World parks: Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom.</p></details>
           <details><summary>Where does a client enter my advisor code?</summary><p>Signed in, on Profile, then Upgrade to Pro, under "Have an advisor code?" (older versions of the app say "affiliate code"). It has to be entered before they buy Pro.</p></details>
-          <details><summary>My client already bought Pro once. Do I earn a fee if they enter my code now?</summary><p>No. The fee is for a client's first Pro purchase ever. If they bought a pass last year without a code, then enter yours and buy again, that purchase doesn't qualify. Codes are best shared before a client's first trip with MagiPulse.</p></details>
+          <details><summary>My client already bought Pro once. Do I earn a fee if they enter my code now?</summary><p>No. The fee is for a client's first paid Pro purchase ever. If they bought a pass last year without a code, then enter yours and buy again, that purchase doesn't qualify. Codes are best shared before a client's first trip with MagiPulse.</p></details>
           <details><summary>My client bought the two-week pass, then upgraded to the annual plan. Do I earn twice?</summary><p>No. You earn once, for the first purchase: $0.50 for the pass. Had they bought the annual plan first, you'd earn $3.00. Recommend the plan that fits the trip. If a client will want a year anyway, suggest they start with the annual plan.</p></details>
+          <details><summary>My client got a free pass with a promotional code. Does that count?</summary><p>A free pass earns no fee, because nothing was bought. It also doesn't use up the client's first purchase: if they later buy Pro with your code entered, that purchase earns your fee as usual. The code box is hidden while a pass is running, so ask them to enter your code before they redeem it.</p></details>
         </div>
       </div>
     </section>
@@ -199,7 +201,7 @@ Have a wonderful trip!
            (source: DisneyWait docs/marketing/travel_advisors/terms_source.html). -->
       <div class="wrap">
         <h2>The advisor referral program</h2>
-        <p class="sub">By invitation while we pilot it. Each advisor earns a referral fee when a client's first Pro purchase uses their code.</p>
+        <p class="sub">By invitation while we pilot it. Each advisor earns a referral fee when a client's first paid Pro purchase uses their code.</p>
 
         <div class="grid4 steps3 refsteps">
           <div><b class="n">1</b><h3>Your agency joins</h3><p>Email us. We send the program terms and a one-page form listing your advisors.</p></div>
