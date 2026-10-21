@@ -99,6 +99,17 @@
     .agency .mock figcaption { font-size: .88rem; line-height: 1.45; }
     .ph { background: #fff1c2; color: #6b4a00; padding: 0 3px; border-radius: 4px; font-weight: 600; }
     @media (max-width: 900px) { .refterms { grid-template-columns: 1fr; } .glance dl { grid-template-columns: 1fr; } .glance dt { border-bottom: 0; padding-bottom: 0; } }
+    .why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 28px; }
+    .why > div { border-top: 2px solid var(--line); padding-top: 12px; min-width: 0; }
+    .why b.big { display: block; font: 800 2rem/1 var(--display); color: var(--ink); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .why h3 { color: var(--ink); font-size: 1.02rem; margin: 8px 0 4px; }
+    .why p { margin: 0; font-size: .95rem; }
+    .whyso { margin: 28px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: 46em; }
+    .whyso li { padding-left: 22px; position: relative; }
+    .whyso li::before { content: ''; position: absolute; left: 0; top: .6em; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+    .whyso b { color: var(--ink); }
+    .src { margin: 22px 0 0; font-size: .85rem; color: var(--muted); max-width: 52em; }
+    @media (max-width: 900px) { .why { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="mp">
@@ -106,7 +117,7 @@
     <div class="wrap">
       <nav class="nav">
         <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
-        <div class="links"><a href="#share">Share</a><a href="#faq">FAQ</a><a href="#videos">Videos</a><a href="#referrals">Referrals</a><a href="#contact">Contact</a></div>
+        <div class="links"><a href="#why">Why</a><a href="#share">Share</a><a href="#faq">FAQ</a><a href="#videos">Videos</a><a href="#referrals">Referrals</a><a href="#contact">Contact</a></div>
       </nav>
     </div>
     <div class="wrap apphero-in">
@@ -129,6 +140,27 @@
         <div><b class="n">1</b><h3>Send the email</h3><p>Paste our ready-made note into your trip documents email and add your client's name.</p></div>
         <div><b class="n">2</b><h3>Attach the client card</h3><p>A one-page PDF with the App Store link and QR code. Or send the MagiPulse page link instead.</p></div>
         <div><b class="n">3</b><h3>Add your advisor code</h3><p>In the referral program? Put your code in the email, so a Pro purchase is credited to you.</p></div>
+      </div>
+    </section>
+
+    <section class="light" id="why">
+      <div class="wrap">
+        <h2>Why your clients need it on the day</h2>
+        <p class="sub">You build a good plan before the trip. Then the park changes it, every day. Every figure here comes from our own records of Walt Disney World.</p>
+        <div class="why">
+          <div><b class="big">About 22</b><h3>Attractions down on a typical day</h3><p>Across the four parks, about 22 attractions go down for 10 minutes or more on a typical day. The fewest we saw was 13.</p></div>
+          <div><b class="big">50 of 50</b><h3>Days a headliner went down</h3><p>At least one headliner went down on every day we counted. Test Track went down on 47 of those 50 days, Slinky Dog Dash on 45.</p></div>
+          <div><b class="big">46 min</b><h3>A typical outage</h3><p>Half of outages last longer than 46 minutes. That's long enough to give up on a ride that comes back an hour later.</p></div>
+          <div><b class="big">About 7 min</b><h3>Forecast error</h3><p>Every night we check yesterday's wait forecast against the real waits. On a typical day it has been off by about 7 minutes.</p></div>
+          <div><b class="big">About 20 min</b><h3>Saved by the last hour</h3><p>Saving one ride for the hour before close saved about 20 minutes of posted wait per day, in replays of 60 real park days.</p></div>
+          <div><b class="big">About 22 min</b><h3>Saved on a party night</h3><p>On a Halloween party night, holding the right rides for after 7 PM saved about 22 minutes on a five-ride day, in replays of 11 party nights.</p></div>
+        </div>
+        <ul class="whyso">
+          <li><b>A ride goes down:</b> your client gets an alert the moment it reopens, instead of giving up on it.</li>
+          <li><b>A wait jumps:</b> they see what's short right now and how the rest of the plan shifts around it.</li>
+          <li><b>The plan adapts:</b> the day you planned together has room to adjust for a breakdown, a storm or a long line.</li>
+        </ul>
+        <p class="src">Downtime counts: MagiPulse's ride-status records for Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom, August 31 to October 20, 2026 (50 days); "down" means reported down for 10 minutes or more, not scheduled closures or refurbishments. Forecast error: 40 days, September 9 to October 20, 2026. Time saved is posted-wait minutes in replays of real days, not a promise for any one trip.</p>
       </div>
     </section>
 
