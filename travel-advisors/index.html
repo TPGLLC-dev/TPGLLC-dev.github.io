@@ -92,6 +92,11 @@
     .earn .out.no { background: #efedf6; color: #4b4566; }
     .earn .out small { display: block; font-weight: 500; font-size: .8rem; }
     @media (max-width: 700px) { .earn li { grid-template-columns: 1fr; } }
+    .agency .mock { margin: 2px 0 0; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: center; }
+    .agency .mock a { display: block; border-radius: 6px; }
+    .agency .mock a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .agency .mock img { display: block; width: 120px; height: auto; border-radius: 6px; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+    .agency .mock figcaption { font-size: .88rem; line-height: 1.45; }
     .ph { background: #fff1c2; color: #6b4a00; padding: 0 3px; border-radius: 4px; font-weight: 600; }
     @media (max-width: 900px) { .refterms { grid-template-columns: 1fr; } .glance dl { grid-template-columns: 1fr; } .glance dt { border-bottom: 0; padding-bottom: 0; } }
   </style>
@@ -258,7 +263,12 @@ Have a wonderful trip!
               <li><b>A code for every advisor,</b> so whoever recommends MagiPulse sees their own results.</li>
               <li><b>One payment to the agency</b> covering all of its advisors, with one W-9. Prefer your advisors paid directly? Just ask.</li>
               <li><b>One statement</b> for the agency, broken down by advisor, so you can share it out.</li>
+              <li><b>Your logo on the client card,</b> if you'd like it: it goes top right, and the card says it's recommended by your agency.</li>
             </ul>
+            <figure class="mock">
+              <a href="client-card-agency-mockup.jpg" aria-label="See the full-size example of a client card with an agency logo"><img src="client-card-agency-mockup.jpg" alt="Example client card with a space for an agency logo in the top right corner" width="1224" height="1584" loading="lazy"></a>
+              <figcaption>Example only. Send us your logo when you join (SVG, PDF or a large PNG) and we'll add it to your advisors' cards.</figcaption>
+            </figure>
             <p class="join">To sign up your agency, email <a href="mailto:tpgllc.advisor@gmail.com?subject=MagiPulse%20advisor%20program%3A%20agency%20sign-up">tpgllc.advisor@gmail.com</a> with your agency name and the advisors who'd like a code.</p>
             <a class="btn ink" href="magipulse-advisor-program-terms.pdf" download>Program terms (PDF)</a>
           </aside>
