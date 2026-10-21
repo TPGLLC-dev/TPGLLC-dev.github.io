@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+  About the Pulse apps. Written 2026-10-21 from the owner's answers; linked
+  from the family page's nav and footer.
+  ⚠️ No personal details: no names, home town, employer or photos of people.
+     "A family of passholders in Central Florida" is as specific as it gets.
+  ⚠️ Every number is from DisneyWait/docs/marketing/travel_advisors/WHY_NUMBERS.md
+     or CLAUDE.md. Refresh them there first, then here.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About the Pulse Apps</title>
+  <meta name="description" content="Why the Pulse apps exist, who they're for, and how we test them before they reach your phone.">
+  <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
+  <link rel="stylesheet" href="../assets/site.css?v=8">
+  <style>
+    .prose > * { max-width: 40em; }
+    .prose p { margin: 0 0 16px; }
+    .prose h2 { margin-bottom: 14px; }
+    .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; margin-top: 8px; max-width: 860px; }
+    .facts div { border-top: 2px solid var(--line); padding-top: 12px; }
+    .facts b { display: block; font: 800 1.9rem/1 var(--display); color: var(--ink); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .facts h3 { color: var(--ink); font-size: 1.02rem; margin: 8px 0 4px; }
+    .facts p { margin: 0; font-size: .95rem; }
+    .who { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .who h3 { color: #fff; font-size: 1.08rem; margin-bottom: 4px; }
+    .who p { margin: 0; font-size: .95rem; }
+    .nots { margin: 0; padding: 0; list-style: none; max-width: 40em; }
+    .nots li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .nots li:last-child { border-bottom: 0; }
+    .nots b { color: var(--ink); }
+    @media (max-width: 760px) { .facts, .who { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
+        <div class="links"><a href="../#apps">Theme parks</a><a href="../#beyond">Beaches &amp; golf</a><a href="../#help">Privacy &amp; support</a><a href="./" aria-current="page">About</a></div>
+      </nav>
+    </div>
+    <div class="wrap hero-in">
+      <h1>Parks are fun. Lines aren't.</h1>
+      <p>Why a family of passholders built an app to decide how long is too long to wait, and to tell you when the wait gets there.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="white">
+      <div class="wrap prose">
+        <h2>How it started</h2>
+        <p>Late in 2025 we were standing in the Jungle Cruise line at Magic Kingdom, and it felt long. Was it, though? Was this a normal wait for that ride at that hour, or a bad one? There was no ride history to check, so there was no way to tell. We thought about stepping out, stayed, and rode.</p>
+        <p>Afterward we kept coming back to one idea: what if you decided how long is too long, and your phone or watch told you when the wait got there? No refreshing an app all day. The parks' own apps are good, but there were things we wanted that they don't do: a wait you set yourself, an alert the moment a broken-down ride reopens, and a plan that changes when the day does.</p>
+        <p>So in early 2026 we started recording every Walt Disney World ride's wait and status, every two minutes, all day, and we haven't stopped. That record became MagiPulse, which reached the App Store in July 2026. The same approach now covers Universal Orlando, SeaWorld and Busch Gardens, and Disneyland, and it carried over to days outside the parks: BeachPulse picks a Florida beach on live weather, water and drive time, and LinksPulse does the same for Central Florida golf.</p>
+      </div>
+    </section>
+
+    <section class="band" aria-label="Who the apps are for">
+      <div class="wrap">
+        <h2 class="group">Who they're for</h2>
+        <p class="group-sub">Every kind of park day. The app should help with yours.</p>
+        <div class="who">
+          <div><h3>First-time visitors</h3><p>Not sure what to do next? It shows which rides are short right now and which are worth waiting for.</p></div>
+          <div><h3>Planners</h3><p>Every minute mapped out before you arrive? Your plan adjusts when a ride goes down or a wait jumps.</p></div>
+          <div><h3>Passholders who stroll</h3><p>A few must-dos and no schedule? Set the wait you'll accept and get an alert when it's there.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="wrap">
+        <h2>How we test it</h2>
+        <p class="sub">We'd rather show nothing than a wrong number. So every part of the app is checked against what actually happened.</p>
+        <div class="facts">
+          <div><b>2 min</b><h3>Live, all day</h3><p>Waits and ride status refresh every two minutes while the parks are open.</p></div>
+          <div><b>Every night</b><h3>Forecasts scored</h3><p>Each night, yesterday's forecast is checked against the real waits. At Walt Disney World it has been off by about 7 minutes on a typical day.</p></div>
+          <div><b>6 a.m.</b><h3>A daily health check</h3><p>Before the parks open, a set of checks looks for anything that stopped updating or looks wrong. Most problems are caught before the first guest opens the app.</p></div>
+          <div><b>In the parks</b><h3>Tested on foot</h3><p>Living near the parks means we test there. Features that use your location have been through dozens of field tests, on foot, not just in a simulator.</p></div>
+          <div><b>60 days</b><h3>Replayed before it ships</h3><p>New planning features are replayed against real park days first. Saving one ride for the last hour before close saved about 20 minutes of waiting per day across 60 replayed days, so it shipped.</p></div>
+          <div><b>About 22</b><h3>Why reopening alerts matter</h3><p>On a typical day at Walt Disney World, about 22 attractions go down for 10 minutes or more. A headliner went down on every one of the last 50 days we counted.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="wrap">
+        <h2>What we won't do</h2>
+        <ul class="nots">
+          <li><b>Pretend to be the parks.</b> We're independent. Disney, Universal and SeaWorld don't make, endorse or sponsor these apps.</li>
+          <li><b>Reword a weather warning.</b> Official National Weather Service alerts appear word for word, labeled as theirs. If the weather service can't be reached, the app says so instead of showing an all-clear.</li>
+          <li><b>Track you on this site.</b> No cookies and no analytics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="wrap prose">
+        <h2>Who we are</h2>
+        <p>We're a family of passholders with an entrepreneurial streak. Our backgrounds are in business development, operations and systems analysis, and we like helping other people succeed. We visited the parks for years, then moved to Central Florida to be near them, and we're there often.</p>
+        <p>The apps are made by our company, The Penelope Group LLC. Penelope was one of our favorite family cars. We liked the name so much that the company took it.</p>
+        <p>Questions, ideas, or a ride we got wrong? Each app's support page reaches us directly: see <a href="../#help">Privacy &amp; support</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 The Penelope Group LLC.</p>
+      <p>These are independent apps. They are not affiliated with, endorsed by or sponsored by The Walt Disney Company, Universal Destinations &amp; Experiences, United Parks &amp; Resorts, or any beach operator, golf course, resort or booking service.</p>
+    </div>
+  </footer>
+</body>
+</html>
