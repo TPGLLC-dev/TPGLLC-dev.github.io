@@ -14,7 +14,7 @@
   <title>About the Pulse Apps</title>
   <meta name="description" content="Why the Pulse apps exist, who they're for, and how we test them before they reach your phone.">
   <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
-  <link rel="stylesheet" href="../assets/site.css?v=8">
+  <link rel="stylesheet" href="../assets/site.css?v=12">
   <style>
     .prose > * { max-width: 40em; }
     .prose p { margin: 0 0 16px; }
@@ -31,7 +31,26 @@
     .nots li { padding: 10px 0; border-bottom: 1px solid var(--line); }
     .nots li:last-child { border-bottom: 0; }
     .nots b { color: var(--ink); }
-    @media (max-width: 760px) { .facts, .who { grid-template-columns: 1fr; } }
+    .chart { margin: 26px 0 0; max-width: 40em; }
+    .chart h3 { color: var(--ink); font-size: 1.02rem; margin-bottom: 4px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 14px; font-size: .86rem; color: var(--muted); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 14px; height: 10px; border-radius: 3px; background: var(--c10); }
+    .legend i.l15 { background: var(--c15); }
+    .rows { display: grid; gap: 14px; }
+    .row { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 4px 16px; align-items: center; }
+    .row .lab b { display: block; color: var(--ink); font-size: .96rem; }
+    .row .lab small { color: var(--muted); font-size: .8rem; }
+    .track { position: relative; height: 26px; border-radius: 6px; background: var(--line); overflow: hidden; }
+    .track .b15, .track .b10 { position: absolute; inset: 0 auto 0 0; }
+    .track .b15 { background: var(--c15); }
+    .track .b10 { background: var(--c10); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: #fff; font: 700 .86rem/1 var(--display); font-variant-numeric: tabular-nums; }
+    .row.all .lab b { font-weight: 800; }
+    .row.all { padding-top: 14px; border-top: 1px solid var(--line); }
+    .chart figcaption { margin-top: 14px; font-size: .84rem; color: var(--muted); }
+    .chart figcaption .n15 { font-variant-numeric: tabular-nums; }
+    :root { --c10: #5b3fd1; --c15: #c9bdf5; }
+    @media (max-width: 760px) { .row { grid-template-columns: 1fr; } .facts, .who { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -55,6 +74,44 @@
         <p>Late in 2025 we were standing in the Jungle Cruise line at Magic Kingdom, and it felt long. Was it, though? Was this a normal wait for that ride at that hour, or a bad one? There was no ride history to check, so there was no way to tell. We thought about stepping out, stayed, and rode.</p>
         <p>Afterward we kept coming back to one idea: what if you decided how long is too long, and your phone or watch told you when the wait got there? No refreshing an app all day. The parks' own apps are good, but there were things we wanted that they don't do: a wait you set yourself, an alert the moment a broken-down ride reopens, and a plan that changes when the day does.</p>
         <p>So in early 2026 we started recording every Walt Disney World ride's wait and status, every two minutes, all day, and we haven't stopped. That record became MagiPulse, which reached the App Store in July 2026. The same approach now covers Universal Orlando, SeaWorld and Busch Gardens, and Disneyland, and it carried over to days outside the parks: BeachPulse picks a Florida beach on live weather, water and drive time, and LinksPulse does the same for Central Florida golf.</p>
+      </div>
+    </section>
+
+    <section class="light" id="forecasts">
+      <div class="wrap prose">
+        <h2>Why we record every wait</h2>
+        <p>A live wait tells you about right now. To know whether 45 minutes is normal for a ride, or what it will be at 3 p.m., you need history. That's why we record every ride's wait every two minutes, and why the record keeps growing.</p>
+        <p>Every night, that record retrains our forecast models. One of them is a neural network, a kind of machine learning that finds patterns too tangled to write down by hand. The models learn from things like the hour, the day of the week and the time of year; the weather (heat, humidity, the chance of rain); the ride itself (indoor or outdoor, thrill or gentle, how popular it is); and special nights, like the Halloween and Christmas parties that close Magic Kingdom early to day guests.</p>
+        <p>We keep checking the work. Each morning, yesterday's forecast is scored against what really happened, and we look for ways to make the data behind it better. In June 2026 we tightened the data the models learn from. Once we had enough party nights to learn from, party nights got their own correction too.</p>
+        <!-- ⚠️ Figures: DisneyWait/docs/marketing/travel_advisors/WHY_NUMBERS.md
+             ("Forecast accuracy by ride group"). Update the paragraph, the chart
+             rows and the date line together. -->
+        <p>So how close is it? Since that change (June 20 to October 21, 2026, at Walt Disney World), gentle rides like Dumbo and the Mad Tea Party have landed within 10 minutes of the forecast more than 9 times in 10. Mid-size rides have landed within 10 minutes about 8 times in 10. Headliners like TRON and Rise of the Resistance are the hardest: within 10 minutes a little over half the time, and within 15 minutes about 3 times in 4. Across every ride, 79% of forecasts landed within 10 minutes.</p>
+        <figure class="chart">
+          <h3>How often the forecast landed close</h3>
+          <div class="legend" aria-hidden="true"><span><i></i>Within 10 minutes</span><span><i class="l15"></i>Within 15 minutes</span></div>
+          <div class="rows" role="list">
+            <div class="row" role="listitem" aria-label="Gentle rides: 95% within 10 minutes, 98% within 15 minutes">
+              <div class="lab"><b>Gentle rides</b><small>Dumbo, Mad Tea Party</small></div>
+              <div class="track"><span class="b15" style="width:98%"></span><span class="b10" style="width:95%">95%</span></div>
+            </div>
+            <div class="row" role="listitem" aria-label="Mid-size rides: 79% within 10 minutes, 91% within 15 minutes">
+              <div class="lab"><b>Mid-size rides</b></div>
+              <div class="track"><span class="b15" style="width:91%"></span><span class="b10" style="width:79%">79%</span></div>
+            </div>
+            <div class="row" role="listitem" aria-label="Headliners: 56% within 10 minutes, 73% within 15 minutes">
+              <div class="lab"><b>Headliners</b><small>TRON, Rise of the Resistance</small></div>
+              <div class="track"><span class="b15" style="width:73%"></span><span class="b10" style="width:56%">56%</span></div>
+            </div>
+            <div class="row all" role="listitem" aria-label="All rides: 79% within 10 minutes, 89% within 15 minutes">
+              <div class="lab"><b>All rides</b></div>
+              <div class="track"><span class="b15" style="width:89%"></span><span class="b10" style="width:79%">79%</span></div>
+            </div>
+          </div>
+          <figcaption>Share of hourly forecasts within 10 and 15 minutes of the actual wait. Walt Disney World, June 20 to October 21, 2026: 72,143 forecasts over 118 days.</figcaption>
+        </figure>
+        <p style="margin-top:26px">Headliners are harder because one breakdown or a passing storm can add an hour to the line, and a forecast made the night before can't see that coming. That's why the app also watches live. It tells you when a wait drops to your number, or the moment a broken-down ride reopens.</p>
+        <p class="note">Figures updated October 2026.</p>
       </div>
     </section>
 
