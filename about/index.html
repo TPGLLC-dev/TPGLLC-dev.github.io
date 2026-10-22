@@ -41,6 +41,9 @@
     .row { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 4px 16px; align-items: center; }
     .row .lab b { display: block; color: var(--ink); font-size: .96rem; }
     .row .lab small { color: var(--muted); font-size: .8rem; }
+    .barline { display: flex; align-items: center; gap: 10px; }
+    .barline .track { flex: 1; }
+    .v15 { width: 2.6em; text-align: right; color: #7a63d9; font: 700 .86rem/1 var(--display); font-variant-numeric: tabular-nums; }
     .track { position: relative; height: 26px; border-radius: 6px; background: var(--line); overflow: hidden; }
     .track .b15, .track .b10 { position: absolute; inset: 0 auto 0 0; }
     .track .b15 { background: var(--c15); }
@@ -93,19 +96,19 @@
           <div class="rows" role="list">
             <div class="row" role="listitem" aria-label="Gentle rides: 95% within 10 minutes, 98% within 15 minutes">
               <div class="lab"><b>Gentle rides</b><small>Dumbo, Mad Tea Party</small></div>
-              <div class="track"><span class="b15" style="width:98%"></span><span class="b10" style="width:95%">95%</span></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:98%"></span><span class="b10" style="width:95%">95%</span></div><span class="v15">98%</span></div>
             </div>
             <div class="row" role="listitem" aria-label="Mid-size rides: 79% within 10 minutes, 91% within 15 minutes">
               <div class="lab"><b>Mid-size rides</b></div>
-              <div class="track"><span class="b15" style="width:91%"></span><span class="b10" style="width:79%">79%</span></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:91%"></span><span class="b10" style="width:79%">79%</span></div><span class="v15">91%</span></div>
             </div>
             <div class="row" role="listitem" aria-label="Headliners: 56% within 10 minutes, 73% within 15 minutes">
               <div class="lab"><b>Headliners</b><small>TRON, Rise of the Resistance</small></div>
-              <div class="track"><span class="b15" style="width:73%"></span><span class="b10" style="width:56%">56%</span></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:73%"></span><span class="b10" style="width:56%">56%</span></div><span class="v15">73%</span></div>
             </div>
             <div class="row all" role="listitem" aria-label="All rides: 79% within 10 minutes, 89% within 15 minutes">
               <div class="lab"><b>All rides</b></div>
-              <div class="track"><span class="b15" style="width:89%"></span><span class="b10" style="width:79%">79%</span></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:89%"></span><span class="b10" style="width:79%">79%</span></div><span class="v15">89%</span></div>
             </div>
           </div>
           <figcaption>Share of hourly forecasts within 10 and 15 minutes of the actual wait. Walt Disney World, June 20 to October 21, 2026: 72,143 forecasts over 118 days.</figcaption>
