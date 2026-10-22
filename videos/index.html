@@ -3,7 +3,8 @@
   All demo videos, one block per app. Built 2026-10-22. The app pages and the
   advisor page each show a row of three and link here.
   - Files live in each app's own folder (magipulse/videos/); this page only
-    points at them. Add an app's block when its first video exists.
+    points at them. Add an app's block when its first video exists; its
+    wrapper takes the app's theme class (bp) so buttons and icons match.
   - Every video has an id (its file name) so a link like /videos/#wait-alert
     opens at that video; "Copy link" copies exactly that.
   - Captions match the MagiPulse page. Each video carries its own footnotes.
@@ -13,9 +14,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pulse App Videos</title>
-  <meta name="description" content="Short demos of the Pulse apps, recorded in the apps: wait alerts, reopening alerts, Lightning Lane sell-outs, day planning and Pro.">
+  <meta name="description" content="Short demos of the Pulse apps, recorded in the apps: wait alerts, reopening alerts, Lightning Lane sell-outs, day planning, Pro, and BeachPulse beach picks and warnings.">
   <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
-  <link rel="stylesheet" href="../assets/site.css?v=10">
+  <link rel="stylesheet" href="../assets/site.css?v=11">
 </head>
 <body>
   <header class="hero">
@@ -78,6 +79,18 @@
             <figure id="redeem-code"><div class="vid" data-src="../magipulse/videos/redeem-code.mp4"><img src="../magipulse/videos/redeem-code.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Redeem a free-pass card"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
               <figcaption>Redeem a free-pass card</figcaption>
               <button class="copylink" type="button" data-id="redeem-code" aria-label="Copy a link to: Redeem a free-pass card">Copy link</button></figure>
+          </div>
+        </div>
+        <div class="appvids bp" id="beachpulse">
+          <div class="appvids-head"><img src="../assets/img/icon-beachpulse.png" alt="" width="48" height="48"><h2>BeachPulse</h2><a href="../beachpulse/">About BeachPulse ›</a></div>
+          <p class="sub">Which Florida beach today, and why.</p>
+          <div class="vids">
+            <figure id="beachpulse-overview"><div class="vid" data-src="../beachpulse/videos/overview.mp4"><img src="../beachpulse/videos/overview.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: BeachPulse in 30 seconds"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>BeachPulse in 30 seconds</figcaption>
+              <button class="copylink" type="button" data-id="beachpulse-overview" aria-label="Copy a link to: BeachPulse in 30 seconds">Copy link</button></figure>
+            <figure id="beach-warnings"><div class="vid" data-src="../beachpulse/videos/beach-warnings.mp4"><img src="../beachpulse/videos/beach-warnings.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Rip current and beach warnings"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Rip current and beach warnings</figcaption>
+              <button class="copylink" type="button" data-id="beach-warnings" aria-label="Copy a link to: Rip current and beach warnings">Copy link</button></figure>
           </div>
         </div>
       </div>

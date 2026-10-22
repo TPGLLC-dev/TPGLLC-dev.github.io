@@ -11,7 +11,7 @@
   --gold: #f2c14e; --soft: #f7f5ff; --white: #ffffff;
   --ink: #1c1840; --body: #3f3a63; --muted: #6b6690; --line: #e6e2f5;
   --on-dark: #e9e6ff; --on-dark-2: #c9c3ee; --on-dark-3: #9c95c9;
-  --a1: #1e1b4b; --a2: #7c3aed;
+  --a1: #1e1b4b; --a2: #7c3aed; --cta: #7c3aed; --link: #4b2bbf;
   --display: 'Bricolage Grotesque', 'Avenir Next', system-ui, sans-serif;
   --text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color-scheme: light;
@@ -61,12 +61,12 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02
 .chip { align-self: flex-start; font: 700 .7rem/1 var(--text); letter-spacing: .06em; text-transform: uppercase; padding: 6px 9px; border-radius: 999px; }
 .chip.live { background: #d8ffe9; color: #0d5132; }
 .chip.soon { background: rgba(255,255,255,.18); color: #fff; }
-.mp  { --a1: #1e1b4b; --a2: #7c3aed; }
-.sp  { --a1: #064e4a; --a2: #14b8a6; }
-.su  { --a1: #4a0d1d; --a2: #b8323f; }
-.mc  { --a1: #1b4fa0; --a2: #e09a12; }
-.bp  { --a1: #0a3d5c; --a2: #2f9fc4; }
-.lp  { --a1: #12401f; --a2: #3a9446; }
+.mp  { --a1: #1e1b4b; --a2: #7c3aed; --cta: #7c3aed; }
+.sp  { --a1: #064e4a; --a2: #14b8a6; --cta: #0f766e; }
+.su  { --a1: #4a0d1d; --a2: #b8323f; --cta: #b8323f; }
+.mc  { --a1: #1b4fa0; --a2: #e09a12; --cta: #1b4fa0; }
+.bp  { --a1: #0a3d5c; --a2: #2f9fc4; --cta: #0b4f58; --link: #0b4f58; }
+.lp  { --a1: #12401f; --a2: #3a9446; --cta: #2e7a38; }
 
 /* section labels on the dark family page */
 .group { color: #fff; font-size: clamp(1.3rem, 2.8vw, 1.7rem); margin: 0 0 6px; }
@@ -107,14 +107,18 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02
 .vid video, .vid img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .vid button { position: absolute; inset: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
 .vid button i { width: 62px; height: 62px; border-radius: 50%; background: rgba(255,255,255,.94); display: grid; place-items: center; box-shadow: 0 6px 18px rgba(0,0,0,.3); }
-.vid button svg { width: 22px; height: 22px; fill: #3b1d9c; margin-left: 4px; }
+.vid button svg { width: 22px; height: 22px; fill: var(--cta); margin-left: 4px; }
 .vids { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .vids figure { margin: 0; min-width: 0; }
 .vids .vid { box-shadow: 0 8px 22px rgba(30,20,80,.22); }
 /* A row of three picks on an app page; the rest live on /videos/. */
 .vids.row3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 880px; margin-inline: auto; }
-.morelink { display: block; width: fit-content; margin: 24px auto 0; padding: 12px 22px; border-radius: 12px; background: #fff; color: #3b1d9c; border: 1.5px solid #cdbcff; font-weight: 700; text-decoration: none; }
-.morelink:hover { border-color: #3b1d9c; }
+.vids.row2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 580px; margin-inline: auto; }
+/* Filled in the page's own app color (--cta: the accent, or a darker shade of it
+   where white text on the accent falls below 4.5:1, e.g. SeaPulse). BeachPulse uses
+   the app's own teal (#0b4f58), not the site's ocean blue. */
+.morelink { display: block; width: fit-content; margin: 24px auto 0; padding: 12px 22px; border-radius: 12px; background: var(--cta); color: #fff; border: 0; font-weight: 700; text-decoration: none; transition: filter .15s ease; }
+.morelink:hover { filter: brightness(1.12); }
 .morelink:focus-visible { outline: 3px solid #f2c14e; outline-offset: 2px; }
 /* /videos/: one block per app, topic groups inside it. Every group keeps the
    same four-column track so a video is the same size in every group. */
@@ -122,13 +126,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02
 .appvids-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
 .appvids-head img { width: 48px; height: 48px; border-radius: 12px; }
 .appvids-head h2 { margin: 0; }
-.appvids-head a { margin-left: auto; font-weight: 700; color: #4b2bbf; }
+.appvids-head a { margin-left: auto; font-weight: 700; color: var(--link); }
 .vgroup { color: var(--ink); font-size: 1.1rem; margin: 30px 0 14px; }
 .vids figure { scroll-margin-top: 24px; }
 .vids figure:target .vid { outline: 3px solid #f2c14e; outline-offset: 4px; }
-.copylink { margin-top: 4px; padding: 4px 0; border: 0; background: none; font: inherit; font-size: .84rem; font-weight: 600; color: #4b2bbf; cursor: pointer; }
+.copylink { margin-top: 4px; padding: 4px 0; border: 0; background: none; font: inherit; font-size: .84rem; font-weight: 600; color: var(--link); cursor: pointer; }
 .copylink:hover { text-decoration: underline; }
-.copylink:focus-visible { outline: 2px solid #4b2bbf; outline-offset: 2px; border-radius: 4px; }
+.copylink:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 4px; }
 .vids figcaption { margin-top: 10px; font-size: .92rem; color: var(--ink); font-weight: 600; }
 
 /* screenshots */
