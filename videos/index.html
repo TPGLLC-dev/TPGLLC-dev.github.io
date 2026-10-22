@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  All demo videos, one block per app. Built 2026-10-22. The app pages and the
+  advisor page each show a row of three and link here.
+  - Files live in each app's own folder (magipulse/videos/); this page only
+    points at them. Add an app's block when its first video exists.
+  - Every video has an id (its file name) so a link like /videos/#wait-alert
+    opens at that video; "Copy link" copies exactly that.
+  - Captions match the MagiPulse page. Each video carries its own footnotes.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pulse App Videos</title>
+  <meta name="description" content="Short demos of the Pulse apps, recorded in the apps: wait alerts, reopening alerts, Lightning Lane sell-outs, day planning and Pro.">
+  <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
+  <link rel="stylesheet" href="../assets/site.css?v=10">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
+        <div class="links"><a href="../#apps">Theme parks</a><a href="../#beyond">Beaches &amp; golf</a><a href="./" aria-current="page">Videos</a><a href="../#help">Privacy &amp; support</a><a href="../about/">About</a></div>
+      </nav>
+    </div>
+    <div class="wrap hero-in">
+      <h1>See the apps in action.</h1>
+      <p>Short demos, each recorded in the app. Tap one to play it, or copy its link to send to someone.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="light">
+      <div class="wrap">
+        <div class="appvids" id="magipulse">
+          <div class="appvids-head"><img src="../assets/img/icon-magipulse.png" alt="" width="48" height="48"><h2>MagiPulse</h2><a href="../magipulse/">About MagiPulse ›</a></div>
+          <p class="sub">Walt Disney World wait times, alerts and day plans.</p>
+          <h3 class="vgroup">Start here</h3>
+          <div class="vids">
+            <figure id="overview"><div class="vid" data-src="../magipulse/videos/overview.mp4"><img src="../magipulse/videos/overview.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: MagiPulse in 45 seconds"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>MagiPulse in 45 seconds</figcaption>
+              <button class="copylink" type="button" data-id="overview" aria-label="Copy a link to: MagiPulse in 45 seconds">Copy link</button></figure>
+          </div>
+          <h3 class="vgroup">Live waits and alerts</h3>
+          <div class="vids">
+            <figure id="wait-alert"><div class="vid" data-src="../magipulse/videos/wait-alert.mp4"><img src="../magipulse/videos/wait-alert.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Set a wait alert"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Set a wait alert</figcaption>
+              <button class="copylink" type="button" data-id="wait-alert" aria-label="Copy a link to: Set a wait alert">Copy link</button></figure>
+            <figure id="ride-reopens"><div class="vid" data-src="../magipulse/videos/ride-reopens.mp4"><img src="../magipulse/videos/ride-reopens.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Get told when a ride reopens"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Get told when a ride reopens</figcaption>
+              <button class="copylink" type="button" data-id="ride-reopens" aria-label="Copy a link to: Get told when a ride reopens">Copy link</button></figure>
+            <figure id="lightning-lane"><div class="vid" data-src="../magipulse/videos/lightning-lane.mp4"><img src="../magipulse/videos/lightning-lane.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: When does Lightning Lane sell out?"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>When does Lightning Lane sell out?</figcaption>
+              <button class="copylink" type="button" data-id="lightning-lane" aria-label="Copy a link to: When does Lightning Lane sell out?">Copy link</button></figure>
+            <figure id="busiest-land"><div class="vid" data-src="../magipulse/videos/busiest-land.mp4"><img src="../magipulse/videos/busiest-land.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: See which land is busiest"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>See which land is busiest</figcaption>
+              <button class="copylink" type="button" data-id="busiest-land" aria-label="Copy a link to: See which land is busiest">Copy link</button></figure>
+          </div>
+          <h3 class="vgroup">Planning your day</h3>
+          <div class="vids">
+            <figure id="last-hour"><div class="vid" data-src="../magipulse/videos/last-hour.mp4"><img src="../magipulse/videos/last-hour.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Save a ride for the last hour"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Save a ride for the last hour</figcaption>
+              <button class="copylink" type="button" data-id="last-hour" aria-label="Copy a link to: Save a ride for the last hour">Copy link</button></figure>
+            <figure id="party-night"><div class="vid" data-src="../magipulse/videos/party-night.mp4"><img src="../magipulse/videos/party-night.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Plan a party-night day"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Plan a party-night day</figcaption>
+              <button class="copylink" type="button" data-id="party-night" aria-label="Copy a link to: Plan a party-night day">Copy link</button></figure>
+            <figure id="christmas-parties"><div class="vid" data-src="../magipulse/videos/christmas-parties.mp4"><img src="../magipulse/videos/christmas-parties.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Christmas party dates and prices"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Christmas party dates and prices</figcaption>
+              <button class="copylink" type="button" data-id="christmas-parties" aria-label="Copy a link to: Christmas party dates and prices">Copy link</button></figure>
+          </div>
+          <h3 class="vgroup">Pro</h3>
+          <div class="vids">
+            <figure id="pro"><div class="vid" data-src="../magipulse/videos/pro.mp4"><img src="../magipulse/videos/pro.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: What do I get with Pro?"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>What do I get with Pro?</figcaption>
+              <button class="copylink" type="button" data-id="pro" aria-label="Copy a link to: What do I get with Pro?">Copy link</button></figure>
+            <figure id="redeem-code"><div class="vid" data-src="../magipulse/videos/redeem-code.mp4"><img src="../magipulse/videos/redeem-code.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Redeem a free-pass card"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+              <figcaption>Redeem a free-pass card</figcaption>
+              <button class="copylink" type="button" data-id="redeem-code" aria-label="Copy a link to: Redeem a free-pass card">Copy link</button></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 The Penelope Group LLC.</p>
+      <p>These are independent apps. They are not affiliated with, endorsed by or sponsored by The Walt Disney Company, Universal Destinations &amp; Experiences, United Parks &amp; Resorts, or any beach operator, golf course, resort or booking service.</p>
+      <p>This site uses no cookies and no analytics.</p>
+    </div>
+  </footer>
+  <script src="../assets/site.js?v=2"></script>
+</body>
+</html>
