@@ -111,6 +111,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02
 .vids { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .vids figure { margin: 0; min-width: 0; }
 .vids .vid { box-shadow: 0 8px 22px rgba(30,20,80,.22); }
+.vids.v3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 880px; margin-inline: auto; }
 .vids figcaption { margin-top: 10px; font-size: .92rem; color: var(--ink); font-weight: 600; }
 
 /* screenshots */
@@ -187,4 +188,7 @@ footer a { color: var(--on-dark-2); }
   .grid4, .grid3, .grid2, .legal, .feats, .tiers, .shots { grid-template-columns: 1fr; }
   .shots { max-width: 300px; margin: 0 auto; }
   .vids { gap: 12px; }
+  .vids.v3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* An odd last video sits centered instead of alone in the left column. */
+  .vids figure:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
 }
