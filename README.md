@@ -1,6 +1,6 @@
 # The Pulse Family of Apps — website
 
-Served by GitHub Pages at https://tpgllc-dev.github.io/ — the family page plus one
+Served by GitHub Pages at https://pulsefamily.app/ — the family page plus one
 page per app (`magipulse/`, `seapulse/`, `studipulse/`, `magicalpulse/`).
 
 - Every claim on a page describes the app as it ships today; each page's header
