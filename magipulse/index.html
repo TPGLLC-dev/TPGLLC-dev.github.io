@@ -24,7 +24,7 @@
   <meta name="apple-itunes-app" content="app-id=6781875368">
   <link rel="icon" type="image/png" href="../assets/img/icon-magipulse.png">
   <link rel="apple-touch-icon" href="../assets/img/icon-magipulse.png">
-  <link rel="stylesheet" href="../assets/site.css?v=11">
+  <link rel="stylesheet" href="../assets/site.css?v=13">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MagiPulse: Walt Disney World wait times and alerts">
   <meta property="og:description" content="Live waits, an alert the moment a ride reopens, Lightning Lane sell-out times and a day plan that works around the weather.">
@@ -87,7 +87,40 @@
       </div>
     </section>
 
-    <section class="light" id="videos">
+    <section class="light" id="forecasts">
+      <div class="wrap">
+        <h2>How close are the forecasts?</h2>
+        <p class="sub">Every ride's wait is forecast hour by hour, by models trained nightly on months of recorded waits and the day's weather. Each forecast is checked against the real wait the next morning. Since June 2026, 79% have landed within 10 minutes.</p>
+        <!-- ⚠️ Same figures as about/index.html; source DisneyWait/docs/marketing/travel_advisors/WHY_NUMBERS.md
+             ("Forecast accuracy by ride group"). Update both pages together. -->
+        <figure class="chart">
+          <h3>How often the forecast landed close</h3>
+          <div class="legend" aria-hidden="true"><span><i></i>Within 10 minutes</span><span><i class="l15"></i>Within 15 minutes</span></div>
+          <div class="rows" role="list">
+            <div class="row" role="listitem" aria-label="Gentle rides: 95% within 10 minutes, 98% within 15 minutes">
+              <div class="lab"><b>Gentle rides</b><small>Dumbo, Mad Tea Party</small></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:98%"></span><span class="b10" style="width:95%">95%</span></div><span class="v15">98%</span></div>
+            </div>
+            <div class="row" role="listitem" aria-label="Mid-size rides: 79% within 10 minutes, 91% within 15 minutes">
+              <div class="lab"><b>Mid-size rides</b><small>Pirates, Haunted Mansion</small></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:91%"></span><span class="b10" style="width:79%">79%</span></div><span class="v15">91%</span></div>
+            </div>
+            <div class="row" role="listitem" aria-label="Headliners: 56% within 10 minutes, 73% within 15 minutes">
+              <div class="lab"><b>Headliners</b><small>TRON, Rise of the Resistance</small></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:73%"></span><span class="b10" style="width:56%">56%</span></div><span class="v15">73%</span></div>
+            </div>
+            <div class="row all" role="listitem" aria-label="All rides: 79% within 10 minutes, 89% within 15 minutes">
+              <div class="lab"><b>All rides</b></div>
+              <div class="barline"><div class="track"><span class="b15" style="width:89%"></span><span class="b10" style="width:79%">79%</span></div><span class="v15">89%</span></div>
+            </div>
+          </div>
+          <figcaption>Share of hourly forecasts within 10 and 15 minutes of the actual wait. Walt Disney World, June 20 to October 21, 2026: 72,143 forecasts over 118 days.</figcaption>
+        </figure>
+        <a class="morelink" style="margin-left:0" href="../about/#forecasts">How our forecasts work</a>
+      </div>
+    </section>
+
+    <section class="white" id="videos">
       <div class="wrap">
         <h2>See it in action</h2>
         <p class="sub">Short demos recorded in the app.</p>
@@ -103,7 +136,7 @@
       </div>
     </section>
 
-    <section class="white" id="pro">
+    <section class="light" id="pro">
       <div class="wrap">
         <h2>Free and Pro</h2>
         <p class="sub">Everything you need to check waits is free. Pro does the planning and watching for you.</p>
