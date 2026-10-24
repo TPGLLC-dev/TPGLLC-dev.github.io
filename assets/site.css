@@ -248,3 +248,60 @@ footer a { color: var(--on-dark-2); }
 .chart figcaption { margin-top: 14px; font-size: .84rem; color: var(--muted); }
 .chart figcaption .n15 { font-variant-numeric: tabular-nums; }
 @media (max-width: 760px) { .chart .row { grid-template-columns: 1fr; } }
+
+/* ---- 2026-10-23 site review ---- */
+/* Home hero: the live app's download sits beside the intro. */
+.hero-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px 40px; align-items: center; }
+.hero-in > div { min-width: 0; }
+.heroget { width: min(340px, 100%); display: grid; gap: 14px; padding: 20px 22px; border-radius: 18px; color: #fff;
+  background: linear-gradient(160deg, var(--a1), var(--a2)); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.heroget-head { display: flex; align-items: center; gap: 12px; }
+.heroget-head img { width: 52px; height: 52px; border-radius: 12px; }
+.heroget-head .chip { display: inline-block; margin-bottom: 6px; }
+.heroget h2 { color: #fff; font-size: 1.35rem; line-height: 1.05; }
+.hero .heroget p { color: #ede9fe; font-size: .95rem; margin: 0; }
+.heroget .get { gap: 14px; }
+.heroget .badge img { height: 46px; }
+.heroget .qr img { width: 72px; height: 72px; }
+.heroget .qr span { color: #ede9fe; font-size: .8rem; }
+.heroget-more { color: #fff; font-size: .88rem; font-weight: 700; text-decoration: none; }
+.heroget-more:hover { text-decoration: underline; }
+@media (max-width: 900px) { .hero-in { grid-template-columns: 1fr; } }
+
+/* Card text contrast: white needs 4.5:1 where the gradient ends. These four
+   light accents measured 2.4-3.8:1, so the card's light end uses a darker shade
+   of the same color (each 5:1 or better). App page heroes are unchanged. */
+.card { background: linear-gradient(160deg, var(--a1), var(--card2, var(--a2))); }
+.sp { --card2: #0f766e; } .mc { --card2: #9a6200; } .bp { --card2: #1b6f8f; } .lp { --card2: #2e7a38; }
+
+/* Coming soon: a status, not a button, and a way forward. */
+.soonpill { display: inline-flex; align-items: center; gap: 9px; padding: 0; background: none; color: #fff; font-weight: 700; }
+.soonpill::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); flex: none; }
+.soonnext { display: block; margin-top: 10px; font-size: .95rem; color: var(--on-dark-2); }
+.soonnext a { color: #fff; font-weight: 700; text-decoration: none; }
+.soonnext a:hover { text-decoration: underline; }
+
+/* Privacy, terms and support: one compact block in the home footer. */
+.foot-legal { margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.1); scroll-margin-top: 16px; }
+.foot-legal h2 { color: var(--on-dark); font-size: 1rem; margin-bottom: 10px; }
+.foot-legal ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 28px; }
+.foot-legal li { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.foot-legal b { color: var(--on-dark); min-width: 7.5em; }
+@media (max-width: 900px) { .foot-legal ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .foot-legal ul { grid-template-columns: 1fr; } }
+.foot-links span { color: var(--on-dark-3); }
+.heroget { justify-self: end; }
+@media (max-width: 900px) { .heroget { justify-self: start; } .hero-in .pulse { display: none; } }
+.hero .heroget .heroget-foot { color: #fff; font-size: .88rem; font-weight: 700; line-height: 1.6; }
+.hero .heroget .heroget-foot { font-weight: 500; color: #ede9fe; }
+.heroget .heroget-foot .heroget-more { color: var(--gold); font-size: .95rem; font-weight: 700; }
+.heroget .heroget-foot .heroget-more { color: #fff; font-size: 1.02rem; }
+.heroget-more span { color: var(--gold); font-weight: 800; }
+
+/* Home: one live app up top, everything else under "Coming soon". */
+.cards { padding-block: 44px 48px; }
+.subgroup { color: var(--on-dark-2); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 8px 0 12px; scroll-margin-top: 16px; }
+.grid-soon { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 18px; }
+@media (max-width: 900px) { .grid-soon { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .grid-soon { grid-template-columns: 1fr; } }
+.cards { padding-top: 44px; }
