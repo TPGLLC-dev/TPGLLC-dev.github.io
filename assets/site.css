@@ -225,6 +225,23 @@ footer a { color: var(--on-dark-2); }
 }
 
 /* forecast accuracy chart (About, MagiPulse) — figures from DisneyWait WHY_NUMBERS.md */
+/* headline stat: the conclusion, above the chart that breaks it down.
+   Gradient runs violet -> night so the big numeral sits on the violet end
+   (large text, 4.9:1 is ample) and the small print sits on --a1 (~15:1).
+   A flat --a2 card would put .86rem white text at ~4.3:1, under AA. */
+.keystat { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px;
+  max-width: 40em; margin: 0 0 24px; padding: 22px 24px; border-radius: 18px;
+  color: #fff; background: linear-gradient(100deg, var(--a2) -10%, var(--a1) 58%); }
+.keystat .big { flex: none; font: 800 clamp(3.1rem, 9vw, 4.2rem)/.86 var(--display);
+  letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.keystat .big i { font-style: normal; font-size: .44em; vertical-align: .62em; margin-left: .03em; }
+.keystat .txt { flex: 1; min-width: 13em; }
+.keystat .eyebrow { color: var(--gold); font: 700 .72rem/1 var(--text);
+  letter-spacing: .09em; text-transform: uppercase; margin: 0 0 7px; }
+.keystat .claim { margin: 0; font-size: 1.08rem; font-weight: 600; color: #fff; }
+.keystat .foot { margin: 7px 0 0; font-size: .86rem; color: var(--on-dark-2); }
+.keystat .foot b { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+
 .chart { --c10: #5b3fd1; --c15: #c9bdf5; }
 .chart { margin: 26px 0 0; max-width: 40em; }
 .chart h3 { color: var(--ink); font-size: 1.02rem; margin-bottom: 4px; }
