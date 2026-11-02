@@ -37,14 +37,14 @@
     <div class="wrap">
       <nav class="nav">
         <a class="brand" href="../"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
-        <div class="links"><a href="#features">Features</a><a href="#videos">Videos</a><a href="#pro">Free &amp; Pro</a><a href="#help">Support</a><a href="../">All apps</a></div>
+        <div class="links"><a href="#why">Why MagiPulse</a><a href="#features">Features</a><a href="#videos">Videos</a><a href="#pro">Free &amp; Pro</a><a href="#help">Support</a><a href="../">All apps</a></div>
       </nav>
     </div>
     <div class="wrap apphero-in">
       <div>
         <div class="appname"><img src="../assets/img/icon-magipulse.png" alt="" width="60" height="60"><span>MagiPulse</span></div>
         <h1>Spend less time checking. More time enjoying.</h1>
-        <p>Live wait times for all four Walt Disney World parks, an alert the moment a broken-down ride reopens, Lightning Lane sell-out times, and a day plan that works around the weather.</p>
+        <p>Knowing a ride's wait right now is useful. Knowing what it will be at 3 p.m. is what lets you plan. MagiPulse forecasts every ride hour by hour and builds your day around it: live waits for all four Walt Disney World parks, an alert the moment a broken-down ride reopens, Lightning Lane sell-out times, and a plan that works around the weather.</p>
         <div class="get">
           <a class="badge" href="https://apps.apple.com/app/id6781875368"><img src="../assets/img/app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
           <div class="qr"><img src="../assets/img/qr-magipulse.svg" alt="QR code for MagiPulse on the App Store" width="84" height="84"><span>On a computer? Scan with your iPhone camera to get the app.</span></div>
@@ -61,6 +61,43 @@
   </header>
 
   <main>
+    <!-- ⚠️ POSITIONING SECTION, added 2026-11-01. First in <main> on purpose:
+         it is the differentiator, and placing it here costs no light/white
+         alternation changes (the dark hero sits above it).
+         ⚠️ EVERY CLAIM HERE IS TRUE OF THE SHIPPED BUILD:
+         - "every two minutes" = fetchRideData's schedule.
+         - "since early 2026" = ride_history starts 2026-02-10.
+         - The forecast, the best time to ride and the day planner are Pro
+           ('forecasts', 'smart_itinerary' in remoteConfigService.premiumFeatures).
+         ⚠️ The free wait-HISTORY claim and the screenshot below are both
+         commented out until the build that ships the day-comparison card is
+         live on the App Store. Do not un-comment either before then: today a
+         visitor cannot download an app that does this. -->
+    <section class="white" id="why">
+      <div class="wrap">
+        <h2>Yesterday's waits tell you a story. Tomorrow's forecast helps you plan.</h2>
+        <p class="sub">A 60-minute wait yesterday afternoon is worth knowing. Whether that ride will be shorter at 3 p.m. tomorrow, and whether to ride it first thing or save it for later, is a different question. That second question is the one MagiPulse is built to answer.</p>
+        <div class="feats">
+          <div class="feat"><h3>We record every wait, every two minutes</h3><p>Every ride at all four Walt Disney World parks, all day, every day since early 2026. That record is what makes it possible to say whether 45 minutes is normal for a ride at that hour, or a bad afternoon.</p></div>
+          <div class="feat"><h3>Then we forecast the next day, hour by hour</h3><p>Each night that record retrains our models, along with the weather, the park's hours and nights like the Halloween and Christmas parties. Every ride gets a wait for every hour.</p></div>
+        </div>
+        <p class="note">You can still look back at what happened. MagiPulse Pro also looks ahead, and uses the forecast to tell you when to ride, what to do next, and what to change when the day does.
+          <!-- ⚠️ Un-comment with the day-comparison build: Yesterday's and today's waits are free for every ride. -->
+        </p>
+        <!-- ⚠️ Un-comment with the day-comparison build. The card puts yesterday,
+             today so far and the forecast on ONE chart with your own wait
+             threshold drawn across it, which is this whole section in one
+             picture. Capture it from a real device; never compose or retouch
+             the numbers (App Review 2.3.3).
+        <figure class="shots" style="max-width:300px;margin-top:28px">
+          <img src="../assets/img/mp-daycompare.jpg" alt="A ride's chart showing yesterday's waits, today's so far and the forecast for the rest of the day" width="560" height="1217" loading="lazy">
+          <figcaption><b>One ride, three questions</b>What it was yesterday, what it is now, and what it is likely to be for the rest of the day.</figcaption>
+        </figure>
+        -->
+        <a class="morelink" style="margin-left:0" href="#forecasts">How close are the forecasts?</a>
+      </div>
+    </section>
+
     <section class="light" id="features">
       <div class="wrap">
         <h2>What it does</h2>
