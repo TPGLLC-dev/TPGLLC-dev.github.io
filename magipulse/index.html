@@ -31,6 +31,16 @@
   <meta property="og:image" content="https://pulsefamily.app/assets/img/share-magipulse.jpg">
   <meta property="og:url" content="https://pulsefamily.app/magipulse/">
   <meta name="twitter:card" content="summary_large_image">
+  <style>
+    .faq { display: grid; gap: 10px; max-width: 820px; }
+    .faq details { background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+    .faq summary { cursor: pointer; color: var(--ink); font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; color: var(--a2); font-weight: 800; }
+    .faq details[open] summary::after { content: '\2013'; }
+    .faq p { margin: 8px 0 0; font-size: .96rem; }
+    .faq-more { margin: 20px 0 0; font-size: .96rem; max-width: 820px; }
+  </style>
 </head>
 <body class="mp">
   <header class="apphero">
@@ -196,6 +206,37 @@
           <div class="tier pro"><h3>Pro</h3><p class="cost">$4.99 for two weeks or $24.99 a year</p>
             <ul><li>Unlimited alerts</li><li>Smart day planner, including weather and party nights</li><li>Wait predictions and the best time to ride</li><li>Multi-day trips and travel parties</li><li>Lightning Lane price-rise warnings</li></ul></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ⚠️ GUEST FAQ, added 2026-11-05. Promoted from travel-advisors/#faq,
+         which answered these for advisors to relay and was the only guest-facing
+         wording of the official-app answer anywhere on the site.
+         ⚠️ FOUR questions on purpose, not six. "Are these official apps?" is
+         folded into the first one rather than asked twice, and the footer
+         disclaimer already says it in stronger words on every page. The pricing
+         answer repeats #pro deliberately: a visitor who skipped the tiers should
+         not have to go looking.
+         ⚠️ EVERY ANSWER MATCHES THE SHIPPED BUILD:
+         - The free list is #pro's tier list verbatim (checked against
+           remoteConfigService.premiumFeatures); the one free alert needs sign-in
+           (AppContext.canAddAlert, and a true guest is routed to sign-up).
+         - MagiPulse books nothing. The LL card logs a booking made in Disney's
+           own app ("I Booked This LL").
+         - Forecast wording stays "estimates" and links to the breakdown. Never
+           quote the 79% here without that link: headliners are 56%.
+         ⚠️ Do NOT link #whenitbreaks from here: that section is not live yet. -->
+    <section class="white" id="faq">
+      <div class="wrap">
+        <h2>Questions worth asking</h2>
+        <p class="sub">Short, straight answers — including what MagiPulse doesn't do.</p>
+        <div class="faq">
+          <details open><summary>Do I still need the My Disney Experience app?</summary><p>Yes. You'll still use Disney's app for tickets, park reservations, dining and Lightning Lane bookings. MagiPulse is an independent companion that helps you decide what to do next and when. It isn't made, endorsed or sponsored by Disney, and it doesn't book anything for you.</p></details>
+          <details><summary>Are the wait forecasts guaranteed?</summary><p>No. Live waits come from the parks and refresh every two minutes. The forecasts are estimates, learned from months of recorded waits and the day's weather. We score them against what really happened every night, and we publish how close they land — <a href="#forecasts">including the headliners, which are the hardest</a>.</p></details>
+          <details><summary>What happens when a ride goes down?</summary><p>That is what the alerts are for. Set the wait you'll accept and MagiPulse tells you when a ride reaches it, or the moment a ride that broke down reopens. It is still worth checking the ride's status before you walk over: a ride can go back down as quickly as it came up.</p></details>
+          <details><summary>Can I use MagiPulse without paying?</summary><p>Yes. Live waits and ride status for all four parks, Lightning Lane status and sell-out history, each ride's downtime history and the park map are free, and you can set one ride alert at a time once you sign in. <a href="#pro">Pro</a> adds unlimited alerts, the hour-by-hour forecasts and the day planner.</p></details>
+        </div>
+        <p class="faq-more">Want the longer version? <a href="../about/">How we build and test the apps</a> covers why we record every wait, how the forecasts are scored each morning, and where they fall short.</p>
       </div>
     </section>
 

@@ -32,6 +32,16 @@
   <meta property="og:image" content="https://pulsefamily.app/assets/img/share-family.jpg">
   <meta property="og:url" content="https://pulsefamily.app/">
   <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* The accuracy line in the band foot. ⚠️ Both figures come from
+       about/#forecasts (the "All rides" row and the figcaption), which in turn
+       come from DisneyWait/docs/marketing/travel_advisors/WHY_NUMBERS.md.
+       Update all three together, and never state the 79% without a link to the
+       full breakdown: headliners land at 56%, and that is the honest half of
+       the claim. */
+    .bandfoot-proof { color: var(--on-dark); font-size: 1.04rem; font-weight: 600; margin: 0 0 6px; max-width: 46em; }
+    .bandfoot-proof b { color: var(--gold); font-variant-numeric: tabular-nums; }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -74,8 +84,11 @@
         <div><h3>A plan that keeps up</h3><p>The planner builds your day around the forecasts and adjusts when a ride goes down. New planning ideas are replayed against real park days before they ship.</p></div>
       </div>
       <div class="wrap bandfoot">
-        <p>Waits refresh every 2 minutes. Free to download; Pro adds forecasts, day plans and unlimited alerts.</p>
-        <a href="about/#forecasts">How our forecasts work ›</a>
+        <div>
+          <p class="bandfoot-proof">Across <b>72,143</b> Walt Disney World forecasts, <b>79%</b> landed within 10 minutes of the real wait. Headliners are the hardest, and we publish those too.</p>
+          <p>Waits refresh every 2 minutes. Free to download; Pro adds forecasts, day plans and unlimited alerts.</p>
+        </div>
+        <a href="about/#forecasts">See the full breakdown ›</a>
       </div>
     </section>
 
