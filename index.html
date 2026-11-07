@@ -4,11 +4,9 @@
 
   ⚠️ EVERY CLAIM DESCRIBES THE APPS AS THEY ARE (checked 2026-10-17 against
   DisneyWait/src/config/flavors/*.js and src/services/remoteConfigService.js):
-    - MagiPulse is the only app on the App Store (lookup by bundle id:
-      com.thepenelopegroup.magipulse → App Store id 6781875368). The others
-      show "Coming soon" until their listing is live. SeaPulse was approved
-      2026-11-06 and releases 2026-11-07 (App Store id 6760982241); its card
-      carries an "Approved" chip until then, then moves up beside MagiPulse.
+    - On the App Store: MagiPulse (id 6781875368) and SeaPulse (id 6760982241,
+      released 2026-11-07). The others show "Coming soon" until their listing
+      is live, then move up into the "On the App Store" group.
     - Waits refresh every 2 minutes (fetchRideData schedule).
     - Free: live waits, LL status/history, ONE alert. Pro ($4.99 / 2 weeks,
       $24.99 / year): unlimited alerts, smart itinerary, forecasts, etc.
@@ -50,7 +48,7 @@
     <div class="wrap">
       <nav class="nav">
         <a class="brand" href="./"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2.5-6 4 11 3-8 1.5 3H22"/></svg></span>The Pulse Family of Apps</a>
-        <div class="links"><a href="magipulse/">MagiPulse</a><a href="#soon">Coming soon</a><a href="videos/">Videos</a><a href="#help">Privacy &amp; support</a><a href="about/">About</a></div>
+        <div class="links"><a href="magipulse/">MagiPulse</a><a href="seapulse/">SeaPulse</a><a href="#soon">Coming soon</a><a href="videos/">Videos</a><a href="#help">Privacy &amp; support</a><a href="about/">About</a></div>
       </nav>
     </div>
     <div class="wrap hero-in">
@@ -94,21 +92,38 @@
       </div>
     </section>
 
-    <section class="cards" id="soon" aria-labelledby="soon-h">
+    <section class="cards" id="out" aria-labelledby="out-h">
       <div class="wrap">
-        <h2 class="group" id="soon-h">Coming soon to iPhone</h2>
-        <p class="group-sub">The same live help for more of Florida, and for Disneyland.</p>
-        <h3 class="subgroup" id="apps">Theme parks</h3>
+        <h2 class="group" id="out-h">On the App Store now</h2>
+        <p class="group-sub">Free to download for iPhone.</p>
       </div>
       <div class="wrap grid-soon">
+        <a class="card mp" href="magipulse/">
+          <img src="assets/img/icon-magipulse.png" alt="" width="56" height="56">
+          <span class="chip live">On the App Store</span>
+          <h2>MagiPulse</h2>
+          <span class="where">Walt Disney World · 4 parks</span>
+          <p>Live waits, reopening alerts and day plans for all four parks.</p>
+          <span class="go">See MagiPulse ›</span>
+        </a>
         <a class="card sp" href="seapulse/">
           <img src="assets/img/icon-seapulse.png" alt="" width="56" height="56">
-          <span class="chip live">Approved · out Nov 7</span>
+          <span class="chip live">New on the App Store</span>
           <h2>SeaPulse</h2>
           <span class="where">SeaWorld Orlando · Busch Gardens Tampa · Aquatica</span>
           <p>Live waits and ride alerts across Orlando and Tampa.</p>
           <span class="go">See SeaPulse ›</span>
         </a>
+      </div>
+    </section>
+
+    <section class="cards" id="soon" aria-labelledby="soon-h">
+      <div class="wrap">
+        <h2 class="group" id="soon-h">Coming soon to iPhone</h2>
+        <p class="group-sub">The same live help for Universal Orlando, Disneyland, Florida beaches and Central Florida golf.</p>
+        <h3 class="subgroup" id="apps">Theme parks</h3>
+      </div>
+      <div class="wrap grid-soon">
         <a class="card su" href="studipulse/">
           <img src="assets/img/icon-studipulse.png" alt="" width="56" height="56">
           <h2>StudiPulse</h2>
