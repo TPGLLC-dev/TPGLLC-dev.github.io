@@ -123,14 +123,45 @@
       </div>
     </section>
 
-    <section class="white">
+    <!-- REPLACES the untitled <section class="white"> that currently holds the
+         four cards (LL live / Downtime history / Best deals / Party nights and
+         park maps). Same band colour, same classes, same 2-up grid, so nothing
+         in site.css changes and the light/white alternation is preserved.
+
+         ⚠️ Why this section exists, so it does not get "tidied" back into a
+         feature list: a crowd calendar can match our forecasts and a chart site
+         can match our history. Neither can push a guest a notification, and
+         neither knows how long THIS ride usually stays down while the guest is
+         standing in front of it. That is the narrow, checkable claim. Do not
+         widen it into "more features than other apps" — TouringPlans is
+         $24.97/yr with touring plans and hourly future estimates, so a breadth
+         claim is falsifiable in one tab and takes the forecast section's
+         credibility down with it.
+
+         ⚠️ EVERY CLAIM HERE CHECKED 2026-11-02 against the shipped app:
+           - Reopen push: detectAndLogStatusChanges, reopenTokens; fetchRideData
+             runs every 2 min, so detection is within one cycle of the API flip.
+           - Downtime History card: RideDetailScreen.js:1435, gated on
+             ride.status === 'DOWN' && downtimeProfile — labels are literally
+             "stops/day", "avg recovery", "stops today", "Based on N days".
+           - LL History card: RideDetailScreen.js:1635, needs >= 3 sample days;
+             copy is "Sells out on ~N% of days".
+           - NONE of the four is Pro-gated. remoteConfigService.premiumFeatures
+             is gps/forecasts/alerts/smart_itinerary/geofencing/multi_day/
+             dining_itinerary/priceSurge/travel_party/mini_plan. 'alerts' caps a
+             FREE user at one alert at a time, which is why the note says so.
+    -->
+    <section class="white" id="whenitbreaks">
       <div class="wrap">
+        <h2>Rides break down. That is when an app has to earn its keep.</h2>
+        <p class="sub">Any app can tell you a ride is down. MagiPulse tells you how long it usually stays down, lets you know the moment it is back, and shows you somewhere to go in the meantime.</p>
         <div class="feats">
-          <div class="feat"><h3>Lightning Lane, live</h3><p>Every ride shows whether its Lightning Lane is sold out or the next return time, plus when it usually sells out.</p></div>
-          <div class="feat"><h3>Downtime history</h3><p>When a ride goes down, see how long its outages usually last before you decide to wait.</p></div>
-          <div class="feat"><h3>Best deals right now</h3><p>The rides running shortest against their usual wait, so you know where to head next.</p></div>
-          <div class="feat"><h3>Party nights and park maps</h3><p>Plan around Halloween and Christmas party tickets, and see which land is busiest on the park map.</p></div>
+          <div class="feat"><h3>Know the minute it is back</h3><p>Tap &ldquo;Notify Me When Open&rdquo; on a ride that is down and go do something else. We check every two minutes, so the alert reaches you about as fast as the ride reopens &mdash; no standing nearby, no refreshing.</p></div>
+          <div class="feat"><h3>See how long it usually stays down</h3><p>While a ride is down, its page shows how often it stops on a normal day, how long it usually takes to come back, and how many times it has stopped today. Enough to decide whether to hold your place or walk away.</p></div>
+          <div class="feat"><h3>Somewhere to go instead</h3><p>Best deals ranks the rides running furthest below their own typical wait right now, so a plan that just fell apart has an obvious next move rather than a blank afternoon.</p></div>
+          <div class="feat"><h3>Lightning Lane, before it is gone</h3><p>Every ride shows the next return time or that it has sold out, plus how often it sells out and roughly when. Worth knowing in the morning, not at two o&rsquo;clock.</p></div>
         </div>
+        <p class="note">Those last two figures come from our own record: every ride, every two minutes, since early 2026. All four are in the free app &mdash; a free account sets one ride alert at a time, and <a href="#pro">Pro</a> makes that unlimited and plans the day around it.</p>
       </div>
     </section>
 
