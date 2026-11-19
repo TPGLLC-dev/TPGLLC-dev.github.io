@@ -7,6 +7,8 @@
      by decoding it.
   ⚠️ Features checked against src/config/flavors/magicalpulse.js on 2026-10-17.
   ⚠️ Legal links stay on https://pulsefamily.app/MagiCalPulse-legal/ until a build points legalUrls here.
+  ⚠️ videos/overview.mp4 is a 720 px web copy of DisneyWait/docs/video/magicalpulse_overview.mp4
+     (recorded live 2026-11-18, real app screens; its footnote says waits are live).
 -->
 <html lang="en">
 <head>
@@ -32,7 +34,7 @@
         <div class="links"><a href="#features">Features</a><a href="#pro">Free &amp; Pro</a><a href="#help">Support</a><a href="../">All apps</a></div>
       </nav>
     </div>
-    <div class="wrap apphero-in" style="grid-template-columns:1fr">
+    <div class="wrap apphero-in">
       <div>
         <div class="appname"><img src="../assets/img/icon-magicalpulse.png" alt="" width="60" height="60"><span>MagiCalPulse</span></div>
         <h1>Live waits for the Disneyland Resort.</h1>
@@ -42,6 +44,12 @@
           <div class="qr"><img src="../assets/img/qr-magicalpulse.svg" alt="QR code for MagiCalPulse on the App Store" width="84" height="84"><span>On a computer? Scan with your iPhone camera to get the app.</span></div>
         </div>
         <span class="price">Free to download. MagiCalPulse Pro is $4.99 for two weeks or $24.99 a year.</span>
+      </div>
+      <div class="herovid">
+        <div class="vid" data-src="videos/overview.mp4">
+          <img src="videos/overview-hero.jpg" alt="MagiCalPulse in 48 seconds: live waits at both parks, Lightning Lane sell-outs, a reopening alert, the day planner and the land heat map" width="540" height="960">
+          <button type="button" aria-label="Play the MagiCalPulse overview video"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button>
+        </div>
       </div>
     </div>
   </header>
@@ -122,5 +130,6 @@
       <p>This site uses no cookies and no analytics.</p>
     </div>
   </footer>
+  <script src="../assets/site.js?v=2"></script>
 </body>
 </html>
