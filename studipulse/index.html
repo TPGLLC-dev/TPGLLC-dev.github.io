@@ -7,6 +7,8 @@
      by decoding it.
   ⚠️ Features checked against src/config/flavors/studipulse.js on 2026-10-17.
   ⚠️ Legal links stay on https://pulsefamily.app/StudiPulse-legal/ until a build points legalUrls here.
+  ⚠️ videos/overview.mp4 is a 720 px web copy of DisneyWait/docs/video/studipulse_overview.mp4
+     (recorded live 2026-11-19, real app screens; its footnote says waits are live).
 -->
 <html lang="en">
 <head>
@@ -32,7 +34,7 @@
         <div class="links"><a href="#features">Features</a><a href="#pro">Free &amp; Pro</a><a href="#help">Support</a><a href="../">All apps</a></div>
       </nav>
     </div>
-    <div class="wrap apphero-in" style="grid-template-columns:1fr">
+    <div class="wrap apphero-in">
       <div>
         <div class="appname"><img src="../assets/img/icon-studipulse.png" alt="" width="60" height="60"><span>StudiPulse</span></div>
         <h1>Live waits for all of Universal Orlando.</h1>
@@ -42,6 +44,12 @@
           <div class="qr"><img src="../assets/img/qr-studipulse.svg" alt="QR code for StudiPulse on the App Store" width="84" height="84"><span>On a computer? Scan with your iPhone camera to get the app.</span></div>
         </div>
         <span class="price">Free to download. StudiPulse Pro is $4.99 for two weeks or $24.99 a year.</span>
+      </div>
+      <div class="herovid">
+        <div class="vid" data-src="videos/overview.mp4">
+          <img src="videos/overview-hero.jpg" alt="StudiPulse in 40 seconds: live waits at all four parks, today vs yesterday, what's down, a reopening alert and the ride map" width="540" height="960">
+          <button type="button" aria-label="Play the StudiPulse overview video"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button>
+        </div>
       </div>
     </div>
   </header>
@@ -122,5 +130,6 @@
       <p>This site uses no cookies and no analytics.</p>
     </div>
   </footer>
+  <script src="../assets/site.js?v=2"></script>
 </body>
 </html>
