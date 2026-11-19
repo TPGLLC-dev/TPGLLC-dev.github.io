@@ -343,5 +343,7 @@ footer a { color: var(--on-dark-2); }
 .subgroup { color: var(--on-dark-2); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 8px 0 12px; scroll-margin-top: 16px; }
 .grid-soon { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 18px; }
 @media (max-width: 900px) { .grid-soon { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .grid-soon { grid-template-columns: 1fr; } }
+/* Four apps on the App Store: two by two, so no card sits alone in a row. */
+.grid-soon.grid-four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 600px) { .grid-soon, .grid-soon.grid-four { grid-template-columns: 1fr; } }
 .cards { padding-top: 44px; }
