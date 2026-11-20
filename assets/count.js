@@ -9,8 +9,8 @@
 //
 // Inert until GC_CODE is filled in: nothing loads and links are untouched.
 (function () {
-  var GC_CODE = '';      // GoatCounter site code, e.g. 'pulsefamily' for pulsefamily.goatcounter.com
-  var PROVIDER_ID = '';  // App Store Connect provider ID ("pt"), from App Analytics > Campaigns
+  var GC_CODE = 'pulsefamily';      // GoatCounter site code, e.g. 'pulsefamily' for pulsefamily.goatcounter.com
+  var PROVIDER_ID = '128427836';  // App Store Connect provider ID ("pt"), from App Analytics > Campaigns
   if (!GC_CODE) return;
 
   var page = location.pathname.split('/').filter(Boolean)[0] || 'home';
