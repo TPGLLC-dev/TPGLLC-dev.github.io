@@ -36,7 +36,9 @@ Served by GitHub Pages at https://pulsefamily.app/ — the family page plus
   `/MagiCalPulse-legal/`, `/BeachPulse-legal/`, `/LinksPulse-legal/`). Those are
   separate repos; edit them there, not here.
 - Videos are 720 px web copies of the finished promo videos (~3 MB each).
-- No cookies, no analytics, no third-party requests (the display font is
+- No cookies and no personal data. Visits are counted anonymously by GoatCounter
+  (`assets/count.js`, inert until its site code is set); otherwise no
+  third-party requests (the display font is
   self-hosted, SIL OFL — see `assets/fonts/OFL.txt`).
 - No Disney, Universal or SeaWorld logos, photos or fonts.
 
