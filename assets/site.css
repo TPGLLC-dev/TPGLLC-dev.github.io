@@ -364,3 +364,5 @@ footer a { color: var(--on-dark-2); }
 .askvid figcaption { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 10px; }
 .vid .ribbon { position: absolute; z-index: 2; top: 16px; left: -50px; width: 160px; transform: rotate(-45deg); background: var(--gold); color: var(--ink); text-align: center; font: 800 .82rem/2 var(--display); letter-spacing: .14em; text-transform: uppercase; box-shadow: 0 3px 10px rgba(0,0,0,.35); pointer-events: none; }
 @media (max-width: 760px) { .newband-in { grid-template-columns: 1fr; } }
+.mc .newband { background: linear-gradient(180deg, #fff3d6 0%, var(--soft) 100%); }
+.newband .wrap > .sub { max-width: 40em; }
