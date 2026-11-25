@@ -3,3 +3,5 @@
 User-agent: *
 Disallow: /travel-advisors/*.pdf
 Disallow: /travel-advisors/client-card.jpg
+Disallow: /travel-advisors/client-card-seapulse.jpg
+Disallow: /travel-advisors/client-card-magicalpulse.jpg

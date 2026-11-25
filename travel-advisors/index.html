@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <!--
-  Travel advisor resources for MagiPulse. Built 2026-10-19.
+  Travel advisor resources for MagiPulse, SeaPulse and MagiCalPulse.
+  Built 2026-10-19 (MagiPulse); made three-app 2026-11-25.
 
   ⚠️ NOT FOR SEARCH. noindex here; robots.txt keeps crawlers off the PDFs
-     (a PDF cannot carry a meta tag). Linked only from the MagiPulse footer.
+     (a PDF cannot carry a meta tag). Linked only from the app pages' footers.
   ⚠️ NOTHING SENSITIVE ON THIS PAGE: GitHub Pages cannot password-protect a
      page. The published fees and payment terms are public on purpose (they
      match the terms PDF); advisor codes, agency names and contacts never
      appear here. Those go in each advisor's private referral guide
      (DisneyWait docs/marketing/travel_advisors/).
-  ⚠️ IN-APP WORDING. The App Store build still says "Have an affiliate code?";
-     builds after 2026-10-18 (efe8774) say "Have an advisor code?". The email and
-     FAQ name both until that build is out — then drop "(older versions…)".
+  ⚠️ IN-APP WORDING. Every app now says "Have an advisor code?" (MagiPulse since
+     1.10.0, which contains efe8774; SeaPulse and MagiCalPulse always did).
+  ⚠️ STUDIPULSE is not in the referral program (terms v1.2), so it is not here.
+  ⚠️ NEVER put a free-pass offer code on this page: each is capped at 500
+     redemptions and the page is public.
   ⚠️ COMMISSION FACTS match functions/subscriptionFunctions.js: one payment per
      client, on the first PAID Pro purchase (two-week pass OR annual) within 60
      days of the code being applied. Renewals, repeat passes and $0 offer-code
@@ -21,7 +24,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>MagiPulse for Travel Advisors</title>
+  <title>Pulse Apps for Travel Advisors</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/png" href="../assets/img/favicon-family.png">
   <link rel="apple-touch-icon" href="../assets/img/icon-family.png">
@@ -111,6 +114,37 @@
     .whyso b { color: var(--ink); }
     .src { margin: 22px 0 0; font-size: .85rem; color: var(--muted); max-width: 52em; }
     @media (max-width: 900px) { .why { grid-template-columns: 1fr; } }
+    /* App chooser: one tab per app, each panel recolored by the app's own class. */
+    .apptabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 22px; }
+    .apptab { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 12px; align-items: center; text-align: left; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font: inherit; color: var(--body); }
+    .apptab img { grid-row: span 2; width: 44px; height: 44px; border-radius: 10px; }
+    .apptab b { color: var(--ink); font: 800 1.05rem/1.15 var(--display); }
+    .apptab span { font-size: .86rem; line-height: 1.3; color: var(--muted); }
+    .apptab[aria-selected="true"] { border-color: var(--cta); box-shadow: 0 0 0 2px var(--cta) inset; background: var(--soft); }
+    .apptab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .apppanel { scroll-margin-top: 20px; }
+    .apppanel + .apppanel { margin-top: 48px; }
+    .js-tabs .apppanel + .apppanel { margin-top: 0; }
+    .apppanel[hidden] { display: none; }
+    .apppanel > h3 { margin: 0 0 14px; color: var(--ink); font: 800 1.3rem/1.2 var(--display); }
+    .js-tabs .apppanel > h3 { display: none; }
+    .apppanel .btn.ink { background: var(--cta); }
+    .apppanel .email .opt { border-left-color: var(--a2); }
+    .apppanel .tiers { margin-top: 26px; }
+    .apppanel .tier.pro { border-color: var(--a2); background: var(--soft); }
+    .applinks { margin: 18px 0 0; font-size: .95rem; color: var(--muted); }
+    .applinks a { color: var(--ink); font-weight: 700; }
+    .fan { position: relative; justify-self: center; width: min(330px, 100%); aspect-ratio: 330 / 330; }
+    .fan img { position: absolute; width: 62%; border-radius: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+    .fan img:nth-child(1) { left: 0; top: 10%; transform: rotate(-7deg); }
+    .fan img:nth-child(2) { left: 19%; top: 2%; transform: rotate(0deg); z-index: 1; }
+    .fan img:nth-child(3) { right: 0; top: 10%; transform: rotate(7deg); z-index: 2; }
+    .appicons { display: flex; gap: 10px; margin-bottom: 16px; }
+    .appicons img { width: 52px; height: 52px; border-radius: 12px; }
+    .freepass { margin-top: 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; border: 1px dashed var(--line); border-radius: 16px; padding: 18px 22px; background: #fff; }
+    .freepass b { display: block; color: var(--ink); font: 800 1.1rem/1.2 var(--display); margin-bottom: 4px; }
+    .freepass p { margin: 0; font-size: .95rem; }
+    @media (max-width: 760px) { .apptabs { grid-template-columns: 1fr; } .freepass { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="mp">
@@ -123,15 +157,15 @@
     </div>
     <div class="wrap apphero-in">
       <div>
-        <div class="appname"><img src="../assets/img/icon-magipulse.png" alt="" width="60" height="60"><span>MagiPulse</span></div>
+        <div class="appicons"><img src="../assets/img/icon-magipulse.png" alt="MagiPulse" width="52" height="52"><img src="../assets/img/icon-seapulse.png" alt="SeaPulse" width="52" height="52"><img src="../assets/img/icon-magicalpulse.png" alt="MagiCalPulse" width="52" height="52"></div>
         <h1>You plan the trip. We help with the park day.</h1>
-        <p>Everything you need to recommend MagiPulse to your Walt Disney World clients and hand it off in about five minutes. No sign-up, no training.</p>
+        <p>Everything you need to recommend MagiPulse, SeaPulse or MagiCalPulse to your clients and hand it off in about five minutes. No sign-up, no training.</p>
         <div class="ta-btns">
-          <a class="btn gold" href="magipulse-client-card.pdf">Get the client card (PDF)</a>
-          <a class="btn ghost" href="#share">Copy the client email</a>
+          <a class="btn gold" href="#share">Get a client card</a>
+          <a class="btn ghost" href="#share">Copy a client email</a>
         </div>
       </div>
-      <img class="cardthumb" src="client-card.jpg" alt="The MagiPulse client card" width="612" height="792">
+      <div class="fan" aria-hidden="true"><img src="client-card.jpg" alt="" width="612" height="792"><img src="client-card-seapulse.jpg" alt="" width="612" height="792"><img src="client-card-magicalpulse.jpg" alt="" width="612" height="792"></div>
     </div>
   </header>
 
@@ -139,7 +173,7 @@
     <section class="band">
       <div class="wrap grid3 steps3">
         <div><b class="n">1</b><h3>Send the email</h3><p>Paste our ready-made note into your trip documents email and add your client's name.</p></div>
-        <div><b class="n">2</b><h3>Attach the client card</h3><p>A one-page PDF with the App Store link and QR code. Or send the MagiPulse page link instead.</p></div>
+        <div><b class="n">2</b><h3>Attach the client card</h3><p>A one-page PDF for each app, with the App Store link and QR code. Or send the app's web page instead.</p></div>
         <div><b class="n">3</b><h3>Add your advisor code</h3><p>In the referral program? Put your code in the email, so a Pro purchase is credited to you.</p></div>
       </div>
     </section>
@@ -147,7 +181,7 @@
     <section class="light" id="why">
       <div class="wrap">
         <h2>Why your clients need it on the day</h2>
-        <p class="sub">You build a good plan before the trip. Then the park changes it, every day. Every figure here comes from our own records of Walt Disney World.</p>
+        <p class="sub">You build a good plan before the trip. Then the park changes it, every day. These figures come from MagiPulse's records of Walt Disney World; SeaPulse and MagiCalPulse give clients the same alerts and day plans at their parks.</p>
         <div class="why">
           <div><b class="big">About 22</b><h3>Attractions down on a typical day</h3><p>Across the four parks, about 22 attractions go down for 10 minutes or more on a typical day. The fewest we saw was 13.</p></div>
           <div><b class="big">50 of 50</b><h3>Days a headliner went down</h3><p>At least one headliner went down on every day we counted. Test Track went down on 47 of those 50 days, Slinky Dog Dash on 45.</p></div>
@@ -168,18 +202,25 @@
     <section class="white" id="share">
       <div class="wrap">
         <h2>Share with your clients</h2>
-        <p class="sub">Everything in this section is written for clients, so it's safe to forward, print or put in a trip folder.</p>
-        <div class="share">
-          <figure>
-            <img src="client-card.jpg" alt="Client card preview" width="612" height="792" loading="lazy">
-            <figcaption>
-              <a class="btn ink" href="magipulse-client-card.pdf">Download the client card (PDF)</a>
-              <small>Letter size, prints in color or black and white. Or send the web page instead: <b>pulsefamily.app/magipulse</b></small>
-            </figcaption>
-          </figure>
-          <div class="email">
-            <header><div><b>Subject: One more tool for your park days</b><br><span>Copy it, then fill in the highlighted parts</span></div><button class="btn line" type="button" id="copy-email">Copy email</button></header>
-<pre id="email-text">Hi <mark>[Client name]</mark>,
+        <p class="sub">Pick the app for your client's trip. Everything here is written for clients, so it's safe to forward, print or put in a trip folder.</p>
+        <div class="apptabs" role="tablist" aria-label="Choose an app" hidden>
+          <button class="apptab mp" type="button" role="tab" id="tab-magipulse" aria-controls="magipulse" aria-selected="true"><img src="../assets/img/icon-magipulse.png" alt="" width="44" height="44"><b>MagiPulse</b><span>Walt Disney World</span></button>
+          <button class="apptab sp" type="button" role="tab" id="tab-seapulse" aria-controls="seapulse" aria-selected="false" tabindex="-1"><img src="../assets/img/icon-seapulse.png" alt="" width="44" height="44"><b>SeaPulse</b><span>SeaWorld Orlando, Busch Gardens Tampa, Aquatica</span></button>
+          <button class="apptab mc" type="button" role="tab" id="tab-magicalpulse" aria-controls="magicalpulse" aria-selected="false" tabindex="-1"><img src="../assets/img/icon-magicalpulse.png" alt="" width="44" height="44"><b>MagiCalPulse</b><span>Disneyland Resort</span></button>
+        </div>
+        <div class="apppanel mp" id="magipulse" role="tabpanel" aria-labelledby="tab-magipulse">
+          <h3>MagiPulse · Walt Disney World</h3>
+          <div class="share">
+            <figure>
+              <img src="client-card.jpg" alt="The MagiPulse client card" width="612" height="792" loading="lazy">
+              <figcaption>
+                <a class="btn ink" href="magipulse-client-card.pdf">Download the client card (PDF)</a>
+                <small>Letter size, prints in color or black and white. Or send the web page instead: <b>pulsefamily.app/magipulse</b></small>
+              </figcaption>
+            </figure>
+            <div class="email">
+              <header><div><b>Subject: One more tool for your park days</b><br><span>Copy it, then fill in the highlighted parts</span></div><button class="btn line copy" type="button" data-copy="email-magipulse">Copy email</button></header>
+<pre id="email-magipulse">Hi <mark>[Client name]</mark>,
 
 As you get ready for your Walt Disney World trip, here's one more tool I recommend for your park days: MagiPulse. It shows live wait times for all four parks, alerts you the moment a ride that's down reopens, and shows when Lightning Lane usually sells out, so you know how early to book.
 
@@ -189,26 +230,97 @@ Install it a few days before you go so you have time to explore. There are short
 
 It works alongside the My Disney Experience app, which you'll still use for tickets, park reservations and Lightning Lane bookings.
 
-<span class="opt">If you decide to upgrade to MagiPulse Pro, enter my advisor code <mark>[YOUR CODE]</mark> before you subscribe: in the app, go to Profile, then Upgrade to Pro, and tap "Have an advisor code?" (older versions of the app say "affiliate code"). MagiPulse pays me a small referral fee if you do.</span>
+<span class="opt">If you decide to upgrade to MagiPulse Pro, enter my advisor code <mark>[YOUR CODE]</mark> before you buy: in the app, go to Profile, then Upgrade to Pro, and tap "Have an advisor code?". MagiPulse pays me a small referral fee if you do.</span>
 Have a wonderful trip!
 <mark>[Your name]</mark></pre>
-            <footer class="note">Not in the referral program? Delete the indented paragraph.</footer>
+              <footer class="note">Not in the referral program? Delete the indented paragraph.</footer>
+            </div>
           </div>
+          <div class="tiers">
+            <div class="tier"><h3>Free</h3><p class="cost">Download and look around, no account needed</p>
+              <ul><li>Live waits and ride status, all four parks</li><li>Lightning Lane status and sell-out history</li><li>Downtime history for each ride</li><li>Park map with the busiest lands</li><li>One ride alert at a time (sign in to set it)</li><li>Ask MagiPulse: 3 questions a day (free account)</li></ul></div>
+            <div class="tier pro"><h3>MagiPulse Pro</h3><p class="cost">$4.99 for two weeks (one-time, doesn't renew) or $24.99 a year</p>
+              <ul><li>Unlimited alerts</li><li>Smart day planner, including weather and party nights</li><li>Wait predictions and the best time to ride</li><li>Multi-day trips and travel parties</li><li>Lightning Lane price-rise warnings</li><li>Ask MagiPulse: 40 questions a day, forecasts and plans included</li></ul></div>
+          </div>
+          <div class="callout"><div><b>The advisor one-sheet</b>How MagiPulse fits around the trip you plan. 11 × 8.5 in, print-ready.</div><a class="btn gold" href="magipulse-advisor-one-sheet.pdf">Download the one-sheet (PDF)</a></div>
+          <p class="applinks">More for clients: <a href="../magipulse/">the MagiPulse page</a>, with screenshots and answers to common questions.</p>
         </div>
-      </div>
-    </section>
+        <div class="apppanel sp" id="seapulse" role="tabpanel" aria-labelledby="tab-seapulse">
+          <h3>SeaPulse · SeaWorld Orlando, Busch Gardens Tampa, Aquatica</h3>
+          <div class="share">
+            <figure>
+              <img src="client-card-seapulse.jpg" alt="The SeaPulse client card" width="612" height="792" loading="lazy">
+              <figcaption>
+                <a class="btn ink" href="seapulse-client-card.pdf">Download the client card (PDF)</a>
+                <small>Letter size, prints in color or black and white. Or send the web page instead: <b>pulsefamily.app/seapulse</b></small>
+              </figcaption>
+            </figure>
+            <div class="email">
+              <header><div><b>Subject: One more tool for your park days</b><br><span>Copy it, then fill in the highlighted parts</span></div><button class="btn line copy" type="button" data-copy="email-seapulse">Copy email</button></header>
+<pre id="email-seapulse">Hi <mark>[Client name]</mark>,
 
-    <section class="light" id="know">
-      <div class="wrap">
-        <h2>What to tell clients</h2>
-        <p class="sub">The short version. The one-sheet below has the longer one, for you.</p>
-        <div class="tiers">
-          <div class="tier"><h3>Free</h3><p class="cost">Download and look around, no account needed</p>
-            <ul><li>Live waits and ride status, all four parks</li><li>Lightning Lane status and sell-out history</li><li>Park map with the busiest lands</li><li>One ride alert at a time (sign in to set it)</li></ul></div>
-          <div class="tier pro"><h3>Pro</h3><p class="cost">$4.99 for two weeks (one-time, doesn't renew) or $24.99 a year</p>
-            <ul><li>Unlimited alerts</li><li>Smart day planner, including weather and party nights</li><li>Wait predictions and the best time to ride</li><li>Multi-day trips and travel parties</li></ul></div>
+As you get ready for your SeaWorld Orlando, Busch Gardens Tampa or Aquatica trip, here's one more tool I recommend for your park days: SeaPulse. It shows live wait times at all three parks, alerts you the moment a ride that's down reopens, and builds a day plan that works around the heat and afternoon storms.
+
+Get it here: https://apps.apple.com/app/id6760982241
+
+Install it a few days before you go so you have time to explore. You can read more about it at https://pulsefamily.app/seapulse/
+
+SeaPulse doesn't sell tickets or Quick Queue; you'll still buy those from the park.
+
+<span class="opt">If you decide to upgrade to SeaPulse Pro, enter my advisor code <mark>[YOUR CODE]</mark> before you buy: in the app, go to Profile, then Upgrade to Pro, and tap "Have an advisor code?". SeaPulse pays me a small referral fee if you do.</span>
+Have a wonderful trip!
+<mark>[Your name]</mark></pre>
+              <footer class="note">Not in the referral program? Delete the indented paragraph.</footer>
+            </div>
+          </div>
+          <div class="tiers">
+            <div class="tier"><h3>Free</h3><p class="cost">Download and look around, no account needed</p>
+              <ul><li>Live waits and ride status at all three parks</li><li>Quick Queue rides marked</li><li>Downtime history for each ride</li><li>One ride alert at a time (sign in to set it)</li><li>Ask SeaPulse: 3 questions a day (free account)</li></ul></div>
+            <div class="tier pro"><h3>SeaPulse Pro</h3><p class="cost">$4.99 for two weeks (one-time, doesn't renew) or $24.99 a year</p>
+              <ul><li>Unlimited alerts</li><li>A smart day plan that works around the weather</li><li>Wait predictions and the best time to ride</li><li>Multi-day trip planning</li><li>Ask SeaPulse: 40 questions a day, forecasts and plans included</li></ul></div>
+          </div>
+          <p class="applinks">More for clients: <a href="../seapulse/">the SeaPulse page</a>, with screenshots and answers to common questions.</p>
         </div>
-        <div class="callout"><div><b>The advisor one-sheet</b>How MagiPulse fits around the trip you plan. 11 × 8.5 in, print-ready.</div><a class="btn gold" href="magipulse-advisor-one-sheet.pdf">Download the one-sheet (PDF)</a></div>
+        <div class="apppanel mc" id="magicalpulse" role="tabpanel" aria-labelledby="tab-magicalpulse">
+          <h3>MagiCalPulse · Disneyland Resort</h3>
+          <div class="share">
+            <figure>
+              <img src="client-card-magicalpulse.jpg" alt="The MagiCalPulse client card" width="612" height="792" loading="lazy">
+              <figcaption>
+                <a class="btn ink" href="magicalpulse-client-card.pdf">Download the client card (PDF)</a>
+                <small>Letter size, prints in color or black and white. Or send the web page instead: <b>pulsefamily.app/magicalpulse</b></small>
+              </figcaption>
+            </figure>
+            <div class="email">
+              <header><div><b>Subject: One more tool for your park days</b><br><span>Copy it, then fill in the highlighted parts</span></div><button class="btn line copy" type="button" data-copy="email-magicalpulse">Copy email</button></header>
+<pre id="email-magicalpulse">Hi <mark>[Client name]</mark>,
+
+As you get ready for your Disneyland Resort trip, here's one more tool I recommend for your park days: MagiCalPulse. It shows live wait times for Disneyland Park and Disney California Adventure, alerts you the moment a ride that's down reopens, and shows when Lightning Lane usually sells out, so you know how early to book.
+
+Get it here: https://apps.apple.com/app/id6800159547
+
+Install it a few days before you go so you have time to explore. There's a short video at https://pulsefamily.app/magicalpulse/
+
+It works alongside the Disneyland app, which you'll still use for tickets and Lightning Lane bookings.
+
+<span class="opt">If you decide to upgrade to MagiCalPulse Pro, enter my advisor code <mark>[YOUR CODE]</mark> before you buy: in the app, go to Profile, then Upgrade to Pro, and tap "Have an advisor code?". MagiCalPulse pays me a small referral fee if you do.</span>
+Have a wonderful trip!
+<mark>[Your name]</mark></pre>
+              <footer class="note">Not in the referral program? Delete the indented paragraph.</footer>
+            </div>
+          </div>
+          <div class="tiers">
+            <div class="tier"><h3>Free</h3><p class="cost">Download and look around, no account needed</p>
+              <ul><li>Live waits and ride status in both parks</li><li>Lightning Lane status, return times and prices</li><li>Lightning Lane sell-out history</li><li>Downtime history for each ride</li><li>One ride alert at a time (sign in to set it)</li><li>Ask MagiCalPulse: 3 questions a day (free account)</li></ul></div>
+            <div class="tier pro"><h3>MagiCalPulse Pro</h3><p class="cost">$4.99 for two weeks (one-time, doesn't renew) or $24.99 a year</p>
+              <ul><li>Unlimited alerts</li><li>A smart day plan that works around the weather</li><li>Wait predictions and the best time to ride</li><li>Multi-day trip planning</li><li>Ask MagiCalPulse: 40 questions a day, forecasts and plans included</li></ul></div>
+          </div>
+          <p class="applinks">More for clients: <a href="../magicalpulse/">the MagiCalPulse page</a>, with screenshots and answers to common questions.</p>
+        </div>
+        <div class="freepass">
+          <div><b>Free-pass cards</b><p>Business-card-size cards that give a client a free two-week Pro pass, for MagiPulse, SeaPulse or MagiCalPulse. A nice extra for a welcome packet. A free pass earns no referral fee, and it doesn't use up the client's first purchase.</p></div>
+          <a class="btn ink" href="mailto:advisors@pulsefamily.app?subject=Free-pass%20cards">Ask us for cards</a>
+        </div>
       </div>
     </section>
 
@@ -217,16 +329,17 @@ Have a wonderful trip!
         <h2>Quick answers</h2>
         <p class="sub">The questions clients ask most, in a sentence or two each.</p>
         <div class="faq">
-          <details open><summary>Does MagiPulse replace the My Disney Experience app?</summary><p>No. Clients still use Disney's app for tickets, park reservations, dining and Lightning Lane bookings. MagiPulse helps them decide what to do next and when.</p></details>
-          <details><summary>Does it book Lightning Lane?</summary><p>No. It shows each ride's Lightning Lane status and when it usually sells out, so clients know how early to book in Disney's app.</p></details>
+          <details open><summary>Do these apps replace the park's own app?</summary><p>No. Clients still use the park's own app or website for tickets and bookings: My Disney Experience at Walt Disney World, the Disneyland app at Disneyland Resort, and SeaWorld or Busch Gardens for tickets and Quick Queue. Our apps help them decide what to do next and when.</p></details>
+          <details><summary>Do they book Lightning Lane or Quick Queue?</summary><p>No. MagiPulse and MagiCalPulse show each ride's Lightning Lane status and when it usually sells out, so clients know how early to book in Disney's app. SeaPulse marks which rides have Quick Queue; clients buy it from the park.</p></details>
           <details><summary>Are the wait predictions guaranteed?</summary><p>No. Live waits update from the parks every two minutes. Predictions are estimates from past waits and today's conditions.</p></details>
           <details><summary>Which Pro option fits a vacation?</summary><p>The two-week pass ($4.99) covers a typical trip and doesn't renew. The annual plan ($24.99) suits annual passholders and repeat visitors.</p></details>
           <details><summary>When should clients install it?</summary><p>A few days before the trip, so they can sign in, set up a day plan and watch a video or two.</p></details>
           <details><summary>What happens when a ride breaks down or a storm rolls in?</summary><p>Clients can get an alert the moment a ride reopens. The day planner keeps outdoor rides out of the hottest and stormiest hours, and official National Weather Service warnings appear in the app.</p></details>
-          <details><summary>Does it work on Apple Watch? On Android?</summary><p>Yes to Apple Watch: a watch app plus watch-face shortcuts showing the shortest waits. It's iPhone-only for now.</p></details>
-          <details><summary>Which parks does it cover?</summary><p>All four Walt Disney World parks: Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom.</p></details>
-          <details><summary>Where does a client enter my advisor code?</summary><p>Signed in, on Profile, then Upgrade to Pro, under "Have an advisor code?" (older versions of the app say "affiliate code"). It has to be entered before they buy Pro.</p></details>
-          <details><summary>My client already bought Pro once. Do I earn a fee if they enter my code now?</summary><p>No. The fee is for a client's first paid Pro purchase ever. If they bought a pass last year without a code, then enter yours and buy again, that purchase doesn't qualify. Codes are best shared before a client's first trip with MagiPulse.</p></details>
+          <details><summary>Do they work on Apple Watch? On Android?</summary><p>Yes to Apple Watch: each app has a watch app plus watch-face shortcuts showing the shortest waits. They're iPhone-only for now.</p></details>
+          <details><summary>Which parks do they cover?</summary><p>MagiPulse covers all four Walt Disney World parks: Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom. SeaPulse covers SeaWorld Orlando, Busch Gardens Tampa and Aquatica. MagiCalPulse covers Disneyland Park and Disney California Adventure.</p></details>
+          <details><summary>My client is visiting Walt Disney World and SeaWorld. Do I need two codes?</summary><p>We set up your code in each app you recommend, usually the same code in each. Your client enters it in each app, and the first paid Pro purchase in each app can earn a fee.</p></details>
+          <details><summary>Where does a client enter my advisor code?</summary><p>Signed in, on Profile, then Upgrade to Pro, under "Have an advisor code?". It has to be entered in that app before they buy Pro there.</p></details>
+          <details><summary>My client already bought Pro once. Do I earn a fee if they enter my code now?</summary><p>No. The fee is for a client's first paid Pro purchase in that app. If they bought a pass last year without a code, then enter yours and buy again, that purchase doesn't qualify. Codes are best shared before a client's first trip with the app.</p></details>
           <details><summary>My client bought the two-week pass, then upgraded to the annual plan. Do I earn twice?</summary><p>No. You earn once, for the first purchase: $0.50 for the pass. Had they bought the annual plan first, you'd earn $3.00. Recommend the plan that fits the trip. If a client will want a year anyway, suggest they start with the annual plan.</p></details>
           <details><summary>My client got a free pass with a promotional code. Does that count?</summary><p>A free pass earns no fee, because nothing was bought. It also doesn't use up the client's first purchase: if they later buy Pro with your code entered, that purchase earns your fee as usual. The code box is hidden while a pass is running, so ask them to enter your code before they redeem it.</p></details>
         </div>
@@ -237,9 +350,11 @@ Have a wonderful trip!
       <div class="wrap">
         <h2>Show, don't explain</h2>
         <p class="sub">Short demos you can send a client instead of walking them through a feature. All of them are on the <a href="../videos/">videos page</a>, each with a link you can copy and send.</p>
-        <div class="vids row3">
+        <div class="vids">
           <figure><div class="vid" data-src="../magipulse/videos/overview.mp4"><img src="../magipulse/videos/overview.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: MagiPulse in 48 seconds"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
             <figcaption>MagiPulse in 48 seconds</figcaption></figure>
+          <figure><div class="vid" data-src="../magicalpulse/videos/overview.mp4"><img src="../magicalpulse/videos/overview.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: MagiCalPulse in 46 seconds"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
+            <figcaption>MagiCalPulse in 46 seconds</figcaption></figure>
           <figure><div class="vid" data-src="../magipulse/videos/ride-reopens.mp4"><img src="../magipulse/videos/ride-reopens.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: When a ride reopens"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
             <figcaption>When a ride reopens</figcaption></figure>
           <figure><div class="vid" data-src="../magipulse/videos/redeem-code.mp4"><img src="../magipulse/videos/redeem-code.jpg" alt="" width="540" height="960" loading="lazy"><button type="button" aria-label="Play: Redeem a free-pass card"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></button></div>
@@ -259,7 +374,7 @@ Have a wonderful trip!
 
         <div class="grid4 steps3 refsteps">
           <div><b class="n">1</b><h3>Your agency joins</h3><p>Email us. We send the program terms and a one-page form listing your advisors.</p></div>
-          <div><b class="n">2</b><h3>Each advisor gets a code</h3><p>We set up a personal code for every advisor, plus a client card with that code printed on it.</p></div>
+          <div><b class="n">2</b><h3>Each advisor gets a code</h3><p>We set up a personal code for every advisor in each app they recommend, plus client cards with that code printed on them.</p></div>
           <div><b class="n">3</b><h3>The client enters it</h3><p>Signed in, on the Upgrade to Pro screen, before their first purchase.</p></div>
           <div><b class="n">4</b><h3>We pay monthly</h3><p>With a statement of qualifying purchases for each code.</p></div>
         </div>
@@ -272,7 +387,7 @@ Have a wonderful trip!
             <li><div class="path"><span class="step">Free pass ends</span><span class="to" aria-hidden="true">&rarr;</span><span class="step">Enters your code</span><span class="to" aria-hidden="true">&rarr;</span><span class="step">Buys Pro within 60 days</span></div><span class="out yes">You earn the fee</span></li>
             <li><div class="path"><span class="step">Bought Pro before, with or without a code</span></div><span class="out no">No fee</span></li>
             <li><div class="path"><span class="step">Enters your code</span><span class="to" aria-hidden="true">&rarr;</span><span class="step">Buys more than 60 days later</span></div><span class="out no">No fee</span></li>
-            <li><div class="path"><span class="step">Renews, or buys a second time</span></div><span class="out no">No fee<small>One fee per client, ever</small></span></li>
+            <li><div class="path"><span class="step">Renews, or buys a second time</span></div><span class="out no">No fee<small>One fee per client in each app</small></span></li>
           </ul>
         </figure>
 
@@ -294,7 +409,7 @@ Have a wonderful trip!
           <aside class="agency">
             <h3>For agencies</h3>
             <ul>
-              <li><b>A code for every advisor,</b> so whoever recommends MagiPulse sees their own results.</li>
+              <li><b>A code for every advisor,</b> so every advisor sees their own results.</li>
               <li><b>One payment to the agency</b> covering all of its advisors, with one W-9. Prefer your advisors paid directly? Just ask.</li>
               <li><b>One statement</b> for the agency, broken down by advisor, so you can share it out.</li>
               <li><b>Your logo on the client card,</b> if you'd like it: it goes top right, and the card says it's recommended by your agency.</li>
@@ -303,7 +418,7 @@ Have a wonderful trip!
               <a href="client-card-agency-mockup.jpg" aria-label="See the full-size example of a client card with an agency logo"><img src="client-card-agency-mockup.jpg" alt="Example client card with a space for an agency logo in the top right corner" width="1224" height="1584" loading="lazy"></a>
               <figcaption>Example only. Send us your logo when you join (SVG, PDF or a large PNG) and we'll add it to your advisors' cards.</figcaption>
             </figure>
-            <p class="join">To sign up your agency, email <a href="mailto:advisors@pulsefamily.app?subject=MagiPulse%20advisor%20program%3A%20agency%20sign-up">advisors@pulsefamily.app</a> with your agency name and the advisors who'd like a code.</p>
+            <p class="join">To sign up your agency, email <a href="mailto:advisors@pulsefamily.app?subject=Advisor%20program%3A%20agency%20sign-up">advisors@pulsefamily.app</a> with your agency name and the advisors who'd like a code.</p>
             <a class="btn ink" href="pulse-advisor-program-terms.pdf" download>Program terms (PDF)</a>
           </aside>
         </div>
@@ -314,7 +429,7 @@ Have a wonderful trip!
       <div class="wrap">
         <h2>Questions, or want to join?</h2>
         <p class="sub">Write to <span class="mail">advisors@pulsefamily.app</span>. Tell us what your clients ask that this page doesn't answer, too.</p>
-        <div class="docs"><a href="mailto:advisors@pulsefamily.app?subject=MagiPulse%20advisor%20program">Email the advisor team</a><a href="../magipulse/">MagiPulse page</a><a href="https://pulsefamily.app/MagiPulse-legal/">Privacy Policy</a></div>
+        <div class="docs"><a href="mailto:advisors@pulsefamily.app?subject=Advisor%20program">Email the advisor team</a><a href="../magipulse/">MagiPulse</a><a href="../seapulse/">SeaPulse</a><a href="../magicalpulse/">MagiCalPulse</a></div>
       </div>
     </section>
   </main>
@@ -322,22 +437,57 @@ Have a wonderful trip!
   <footer>
     <div class="wrap">
       <p>© 2026 The Penelope Group LLC.</p>
-      <p>MagiPulse is an independent app and is not affiliated with, endorsed by or sponsored by The Walt Disney Company. Park and attraction names are used only to identify what the app covers.</p>
+      <p>MagiPulse, SeaPulse and MagiCalPulse are independent apps and are not affiliated with, endorsed by or sponsored by The Walt Disney Company or United Parks &amp; Resorts Inc. Park and attraction names are used only to identify what each app covers.</p>
       <p>This site uses no cookies and counts visits anonymously. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
     </div>
   </footer>
   <script src="../assets/site.js?v=2"></script>
   <script>
-    // Copy the email as plain text; fall back to selecting it if the clipboard is refused.
+    // Copy an email as plain text; fall back to selecting it if the clipboard is refused.
     (function () {
-      var btn = document.getElementById('copy-email'), pre = document.getElementById('email-text');
-      if (!btn || !pre) return;
-      btn.addEventListener('click', function () {
-        var text = pre.innerText;
-        var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 2000); };
-        var select = function () { var r = document.createRange(); r.selectNodeContents(pre); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected: press Copy'; };
-        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select); else select();
+      document.querySelectorAll('button.copy').forEach(function (btn) {
+        var pre = document.getElementById(btn.getAttribute('data-copy'));
+        if (!pre) return;
+        btn.addEventListener('click', function () {
+          var text = pre.innerText;
+          var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 2000); };
+          var select = function () { var r = document.createRange(); r.selectNodeContents(pre); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected: press Copy'; };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select); else select();
+        });
       });
+    })();
+    // App tabs. Without JS every panel shows, one after another, each with its own heading.
+    // #seapulse or #magicalpulse in the address opens that app.
+    (function () {
+      var list = document.querySelector('.apptabs'); if (!list) return;
+      var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+      var show = function (key, focus) {
+        tabs.forEach(function (t) {
+          var on = t.getAttribute('aria-controls') === key;
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+          if (on && focus) t.focus();
+        });
+      };
+      list.hidden = false;
+      document.getElementById('share').classList.add('js-tabs');
+      tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { show(t.getAttribute('aria-controls')); history.replaceState(null, '', '#' + t.getAttribute('aria-controls')); });
+        t.addEventListener('keydown', function (e) {
+          var d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0;
+          if (!d) return; e.preventDefault();
+          show(tabs[(i + d + tabs.length) % tabs.length].getAttribute('aria-controls'), true);
+        });
+      });
+      var fromHash = function (initial) {
+        var h = location.hash.slice(1);
+        var known = tabs.some(function (t) { return t.getAttribute('aria-controls') === h; });
+        if (known) { show(h); document.getElementById('share').scrollIntoView(); }
+        else if (initial) show('magipulse');
+      };
+      fromHash(true);
+      window.addEventListener('hashchange', function () { fromHash(false); });
     })();
   </script>
   <script src="/assets/count.js" defer></script>
